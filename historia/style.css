@@ -74,6 +74,97 @@ header{
 
 /* Estilização do menu mobile */
 @media screen and (max-width: 1030px) {
+
+
+    .img1-mobile{
+        display: flex;
+        position: absolute;
+        top: 750px;
+        left: 85px;
+        flex-direction: column; /* Itens alinhados na horizontal */
+        align-items: center; /* Alinha verticalmente */
+    }
+
+    .box-txt1-mobile{
+        font-size: 14px;
+        flex-direction: column;
+        display: flex;
+        position: relative;
+        top: 50px; /* Espaçamento acima e abaixo */
+        left: -50px; /* Espaçamento lateral, positivo para direita negativo para esquerda */
+    }
+
+    .logo2-mobile{
+        display: flex;
+        position: absolute;
+        top: 1280px;
+        left: -95px;
+        flex-direction: column; /* Itens alinhados na horizontal */
+        align-items: center; /* Alinha verticalmente */
+    }
+
+    .box-txt2-mobile{
+        font-size: 16px;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        top: 1550px;
+        left: -10px;                
+    }
+
+    /* Nosso Logo */
+    .h1-2-mobile{
+        display: flex;
+        position: relative;
+        top: 1000px; /* Espaçamento acima e abaixo */
+        left: -50px; /* Espaçamento lateral, positivo para direita negativo para esquerda */
+    }
+
+    .linha1-mobile{
+        display: flex;
+        position: relative;
+        top: 1020px; /* Espaçamento acima e abaixo */
+        left: 0px; /* Espaçamento lateral, positivo para direita negativo para esquerda */
+    }
+
+/*Grito de Guerra */
+    .h1-3-mobile{
+        display: flex;
+        position: relative;
+        top: 1575px; /* Espaçamento acima e abaixo */
+        left: -50px; /* Espaçamento lateral, positivo para direita negativo para esquerda */
+    }
+
+    .linha2-mobile{
+        display: flex;
+        position: relative;
+        top: 1620px; /* Espaçamento acima e abaixo */
+        left: 0px; /* Espaçamento lateral, positivo para direita negativo para esquerda */
+    }
+
+    .box-txt3-mobile{
+        font-size: 14px;
+        flex-direction: column;
+        display: flex;
+        position: relative;
+        top: 1670px; /* Espaçamento acima e abaixo */
+        left: -70px; /* Espaçamento lateral, positivo para direita negativo para esquerda */
+    }
+
+    .linha3-mobile{
+        display: flex;
+        position: relative;
+        top: 1800px; /* Espaçamento acima e abaixo */
+        left: 0px; /* Espaçamento lateral, positivo para direita negativo para esquerda */
+    }
+
+    .p-1-mobile{
+        display: flex;
+        position: relative;
+        top: 1820px; /* Espaçamento acima e abaixo */
+        left: 0px; /* Espaçamento lateral, positivo para direita negativo para esquerda */
+    }
+
     .menu, .sociais{
         display: none;
     }
@@ -124,17 +215,64 @@ p{
 
   .logo2{
         position: relative;
-        top: 0px;
-        left: 80px;
+        top: -80px;
+        left: 65px;
 }
 
 .box-txt2{
     width: 720px;
     height: 40px;
     position: relative;
-    top: -80px; /* Espaçamento acima e abaixo */
-    left: 530px; /* Espaçamento lateral, positivo para direita negativo para esquerda */
+    top: -450px; /* Espaçamento acima e abaixo */
+    left: 537px; /* Espaçamento lateral, positivo para direita negativo para esquerda */
     background-color: #fff;
 }
+
+.linha2 {
+    width: 87%; /* Largura da linha */
+    height: 1px; /* Espessura da linha */
+    background-color: rgb(235, 231, 231); /* Cor da linha */
+    margin: 5% 0; /* Espaçamento acima e abaixo */
+    margin-left: 6%;
+    top: -150px;
+    position: relative;
+  }
+
+  .h1-3 {
+    position: relative;
+    top: -90px; /* Move para baixo */
+    left: 80px; /* Move para a direita */
+  }
+
+  .box-txt3{
+    width: 300px;
+    height: 40px;
+    position: relative;
+    top: -180px;
+    left: 100px;
+}
+
+.h4-1{
+    position: relative;
+    top: -200px; /* Move para baixo */
+    left: 100px; /* Move para a direita */
+
+}
+
+.linha3 {
+    width: 87%; /* Largura da linha */
+    height: 1px; /* Espessura da linha */
+    background-color: rgb(235, 231, 231); /* Cor da linha */
+    margin: 5% 0; /* Espaçamento acima e abaixo */
+    margin-left: 6%;
+    top:30px;
+    position: relative;
+  }
+
+  .p-1{
+    width: 500px;
+    position: relative;
+    left: 500px;
+  }
 
   
