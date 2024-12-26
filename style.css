@@ -82,3 +82,59 @@ header{
         width: 100%
     }
 }
+
+h1 {
+    position: relative;
+    top: 20px; /* Move para baixo */
+    left: 80px; /* Move para a direita */
+  }
+  
+
+p{
+    font-family: arial;
+    text-align:justify;
+    text-indent: 20px;
+}
+
+.box-txt1{
+    width: 720px;
+    height: 40px;
+    position: relative;
+    top: 30px;
+    left: 80px;
+    background-color: #fff;
+}
+
+.img1{
+    display: flex;
+    justify-content: right;
+    position: relative;
+    top: -15px;
+    left: -90px;   
+}
+
+.linha1 {
+    width: 87%; /* Largura da linha */
+    height: 1px; /* Espessura da linha */
+    background-color: rgb(235, 231, 231); /* Cor da linha */
+    margin: 2% 0; /* Espaçamento acima e abaixo */
+    margin-left: 6%;
+    top: -20px;
+  }
+
+  .logo2{
+        position: relative;
+        top: 0px;
+        left: 80px;
+}
+
+.box-txt2{
+    width: 720px;
+    height: 40px;
+    position: relative;
+    top: -80px; /* Espaçamento acima e abaixo */
+    left: 530px; /* Espaçamento lateral, positivo para direita negativo para esquerda */
+    background-color: #fff;
+}
+
+  
