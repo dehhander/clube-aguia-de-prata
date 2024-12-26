@@ -5,6 +5,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: "Crimson Text", serif;
+    word-wrap: break-word;
 }
 
 .container{
@@ -86,16 +87,20 @@ header{
     }
 
     .box-txt1-mobile{
-        font-size: 14px;
+        width: 0;
+        height: 0;
+        font-size: 10px;
+        text-align: center;
         flex-direction: column;
         display: flex;
         position: relative;
         top: 50px; /* Espaçamento acima e abaixo */
-        left: -50px; /* Espaçamento lateral, positivo para direita negativo para esquerda */
+        left: -70px; /* Espaçamento lateral, positivo para direita negativo para esquerda */
     }
 
     .logo2-mobile{
         display: flex;
+        flex-direction: column;
         position: absolute;
         top: 1280px;
         left: -95px;
@@ -104,12 +109,12 @@ header{
     }
 
     .box-txt2-mobile{
-        font-size: 16px;
+        font-size: 14px;
+        flex-direction: column-reverse;
         display: flex;
-        flex-direction: column;
         position: relative;
-        top: 1550px;
-        left: -10px;                
+        top: 1820px; /* Espaçamento acima e abaixo */
+        left: -700px; /* Espaçamento lateral, positivo para direita negativo para esquerda */
     }
 
     /* Nosso Logo */
@@ -131,14 +136,14 @@ header{
     .h1-3-mobile{
         display: flex;
         position: relative;
-        top: 1575px; /* Espaçamento acima e abaixo */
+        top: 1680px; /* Espaçamento acima e abaixo */
         left: -50px; /* Espaçamento lateral, positivo para direita negativo para esquerda */
     }
 
     .linha2-mobile{
         display: flex;
         position: relative;
-        top: 1620px; /* Espaçamento acima e abaixo */
+        top: 1725px; /* Espaçamento acima e abaixo */
         left: 0px; /* Espaçamento lateral, positivo para direita negativo para esquerda */
     }
 
@@ -147,7 +152,7 @@ header{
         flex-direction: column;
         display: flex;
         position: relative;
-        top: 1670px; /* Espaçamento acima e abaixo */
+        top: 1780px; /* Espaçamento acima e abaixo */
         left: -70px; /* Espaçamento lateral, positivo para direita negativo para esquerda */
     }
 
@@ -159,10 +164,11 @@ header{
     }
 
     .p-1-mobile{
+        font-size: 12px;
         display: flex;
         position: relative;
         top: 1820px; /* Espaçamento acima e abaixo */
-        left: 0px; /* Espaçamento lateral, positivo para direita negativo para esquerda */
+        left: -500px; /* Espaçamento lateral, positivo para direita negativo para esquerda */
     }
 
     .menu, .sociais{
@@ -174,25 +180,32 @@ header{
     }
 }
 
-h1 {
+.h1-1 {
+    width: 200px;
+    position: relative;
+    top: 5px; /* Move para baixo */
+    left: 0px; /* Move para a direita */
+  }
+
+  h1 {
+    width: 200px;
     position: relative;
     top: 20px; /* Move para baixo */
-    left: 80px; /* Move para a direita */
+    left: 30px; /* Move para a direita */
   }
   
 
 p{
     font-family: arial;
     text-align:justify;
-    text-indent: 20px;
 }
 
 .box-txt1{
-    width: 720px;
+    width: 520px;
     height: 40px;
     position: relative;
     top: 30px;
-    left: 80px;
+    left: 30px;
     background-color: #fff;
 }
 
@@ -200,71 +213,73 @@ p{
     display: flex;
     justify-content: right;
     position: relative;
-    top: -15px;
-    left: -90px;   
+    top: -10px;
+    left: -300px;
 }
 
 .linha1 {
-    width: 87%; /* Largura da linha */
+    width: 100%; /* Largura da linha */
     height: 1px; /* Espessura da linha */
     background-color: rgb(235, 231, 231); /* Cor da linha */
     margin: 2% 0; /* Espaçamento acima e abaixo */
-    margin-left: 6%;
-    top: -20px;
+    margin-left: 0%;
+    top: 20px;
   }
 
   .logo2{
         position: relative;
         top: -80px;
-        left: 65px;
+        left: 35px;
 }
 
 .box-txt2{
-    width: 720px;
-    height: 40px;
+    width: 700px;
+    height: 45px;
     position: relative;
     top: -450px; /* Espaçamento acima e abaixo */
-    left: 537px; /* Espaçamento lateral, positivo para direita negativo para esquerda */
+    left: 550px; /* Espaçamento lateral, positivo para direita negativo para esquerda */
     background-color: #fff;
 }
 
 .linha2 {
-    width: 87%; /* Largura da linha */
+    width: 100%; /* Largura da linha */
     height: 1px; /* Espessura da linha */
     background-color: rgb(235, 231, 231); /* Cor da linha */
     margin: 5% 0; /* Espaçamento acima e abaixo */
-    margin-left: 6%;
+    margin-left: 0%;
     top: -150px;
     position: relative;
   }
 
+/* Grito de Guerra */
   .h1-3 {
+    width: 220px;
     position: relative;
     top: -90px; /* Move para baixo */
-    left: 80px; /* Move para a direita */
+    left: 30px; /* Move para a direita */
   }
 
   .box-txt3{
     width: 300px;
     height: 40px;
     position: relative;
-    top: -180px;
-    left: 100px;
+    top: -175px;
+    left: 60px;
 }
 
+/* Água de Prata */
 .h4-1{
-    position: relative;
-    top: -200px; /* Move para baixo */
-    left: 100px; /* Move para a direita */
-
+    position: absolute; 
+    top: 1140px;
+    left: 60px;   
 }
 
 .linha3 {
-    width: 87%; /* Largura da linha */
+    width: 100%; /* Largura da linha */
     height: 1px; /* Espessura da linha */
     background-color: rgb(235, 231, 231); /* Cor da linha */
     margin: 5% 0; /* Espaçamento acima e abaixo */
-    margin-left: 6%;
+    margin-left: 0%;
     top:30px;
     position: relative;
   }
@@ -272,7 +287,7 @@ p{
   .p-1{
     width: 500px;
     position: relative;
-    left: 500px;
+    left: 400px;
   }
 
   
