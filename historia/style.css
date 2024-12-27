@@ -81,12 +81,12 @@ header{
         width: 173%;
         height: 300px;
         display: block;
-        margin: 500px auto;    
+        margin: 470px -40px;    
     }
 
 
     .p-txt1{
-        width: 300px;
+        width: 330px;
         font-size: 14px;
         position: relative;
         top: 30px;
@@ -97,11 +97,11 @@ header{
         width: 173%;
         height: 300px;
         display: flex;
-        margin: 580px auto;  
+        margin: 580px 5px;  
     }
 
     .p-txt2{
-        width: 300px;
+        width: 330px;
         font-size: 14px;
         position: relative;
         top: -220px;
@@ -134,7 +134,7 @@ header{
         top: 15px; /* Espaçamento acima e abaixo */
         left: 0px; /* Espaçamento lateral, positivo para direita negativo para esquerda */
     }
-
+/*Aguia de Prata*/
     h4{
         display: flex;
         position: relative;
@@ -143,7 +143,7 @@ header{
     }
 
     .p-txt3{
-        width: 300px;
+        width: 330px;
         display: flex;
         position: relative;
         top: -135px; /* Espaçamento acima e abaixo */
@@ -162,7 +162,7 @@ header{
         display: flex;
         position: relative;
         top: 0px; /* Espaçamento acima e abaixo */
-        left: -377px; /* Espaçamento lateral, positivo para direita negativo para esquerda */
+        left: -365px; /* Espaçamento lateral, positivo para direita negativo para esquerda */
         width: 300px;
     }
 
