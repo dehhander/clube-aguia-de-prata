@@ -76,99 +76,94 @@ header{
 /* Estilização do menu mobile */
 @media screen and (max-width: 1030px) {
 
-
-    .img1-mobile{
-        display: flex;
-        position: absolute;
-        top: 750px;
-        left: 85px;
-        flex-direction: column; /* Itens alinhados na horizontal */
-        align-items: center; /* Alinha verticalmente */
+/*mobile*/
+    .img1{
+        width: 173%;
+        height: 300px;
+        display: block;
+        margin: 500px auto;    
     }
 
-    .box-txt1-mobile{
-        width: 0;
-        height: 0;
-        font-size: 10px;
-        text-align: center;
-        flex-direction: column;
-        display: flex;
-        position: relative;
-        top: 50px; /* Espaçamento acima e abaixo */
-        left: -70px; /* Espaçamento lateral, positivo para direita negativo para esquerda */
-    }
 
-    .logo2-mobile{
-        display: flex;
-        flex-direction: column;
-        position: absolute;
-        top: 1280px;
-        left: -95px;
-        flex-direction: column; /* Itens alinhados na horizontal */
-        align-items: center; /* Alinha verticalmente */
-    }
-
-    .box-txt2-mobile{
+    .p-txt1{
+        width: 300px;
         font-size: 14px;
-        flex-direction: column-reverse;
-        display: flex;
         position: relative;
-        top: 1820px; /* Espaçamento acima e abaixo */
-        left: -700px; /* Espaçamento lateral, positivo para direita negativo para esquerda */
+        top: 30px;
+        text-align: justify;
+    }
+/*mobile*/
+    .logo2{
+        width: 173%;
+        height: 300px;
+        display: flex;
+        margin: 580px auto;  
+    }
+
+    .p-txt2{
+        width: 300px;
+        font-size: 14px;
+        position: relative;
+        top: -220px;
+        left: -523px;
     }
 
     /* Nosso Logo */
-    .h1-2-mobile{
-        display: flex;
-        position: relative;
-        top: 1000px; /* Espaçamento acima e abaixo */
-        left: -50px; /* Espaçamento lateral, positivo para direita negativo para esquerda */
+    .h1-2{
+        margin: -500px 0px;
     }
 
     .linha1-mobile{
-        display: flex;
         position: relative;
-        top: 1020px; /* Espaçamento acima e abaixo */
-        left: 0px; /* Espaçamento lateral, positivo para direita negativo para esquerda */
+        top: 515px;
+        left: 0;
+        
     }
 
 /*Grito de Guerra */
     .h1-3-mobile{
         display: flex;
         position: relative;
-        top: 1680px; /* Espaçamento acima e abaixo */
-        left: -50px; /* Espaçamento lateral, positivo para direita negativo para esquerda */
+        top: -30px; /* Espaçamento acima e abaixo */
+        left: 0px; /* Espaçamento lateral, positivo para direita negativo para esquerda */
     }
 
     .linha2-mobile{
         display: flex;
         position: relative;
-        top: 1725px; /* Espaçamento acima e abaixo */
+        top: 15px; /* Espaçamento acima e abaixo */
         left: 0px; /* Espaçamento lateral, positivo para direita negativo para esquerda */
     }
 
-    .box-txt3-mobile{
-        font-size: 14px;
-        flex-direction: column;
+    h4{
         display: flex;
         position: relative;
-        top: 1780px; /* Espaçamento acima e abaixo */
-        left: -70px; /* Espaçamento lateral, positivo para direita negativo para esquerda */
+        top: -140px;
+        left: 25px;        
+    }
+
+    .p-txt3{
+        width: 300px;
+        display: flex;
+        position: relative;
+        top: -135px; /* Espaçamento acima e abaixo */
+        left: 25px; /* Espaçamento lateral, positivo para direita negativo para esquerda */
     }
 
     .linha3-mobile{
         display: flex;
         position: relative;
-        top: 1800px; /* Espaçamento acima e abaixo */
+        top: -15px; /* Espaçamento acima e abaixo */
         left: 0px; /* Espaçamento lateral, positivo para direita negativo para esquerda */
     }
 
     .p-1-mobile{
-        font-size: 12px;
+        font-size: 10px;
         display: flex;
         position: relative;
-        top: 1820px; /* Espaçamento acima e abaixo */
-        left: -500px; /* Espaçamento lateral, positivo para direita negativo para esquerda */
+        top: 0px; /* Espaçamento acima e abaixo */
+        left: -377px; /* Espaçamento lateral, positivo para direita negativo para esquerda */
+        width: 300px;
     }
 
     .menu, .sociais{
