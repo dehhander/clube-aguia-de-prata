@@ -5,18 +5,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <!-- Slide -->
+    <link rel="stylesheet" href="slide/style.css">
+    <link rel="stylesheet" href="slide/slide.css">
+    <script src="slide/slide.js" defer></script>
+    <!-- Fim -->
     <title>Águia de Prata</title>
 </head>
 <body>
     <header>
         <div class="container">
-            <div class="logo"><img src="img/logo.png" alt=""></div>
+    
+            <a href="index.html" class="logo"><img src="img/logo.png" alt=""></a>
             <div class="menu">
                 <nav>
-                    <a href="#">História</a>
-                    <a href="#">Agenda</a>
-                    <a href="#">Unidades</a>
-                    <a href="#">Contato</a>
+                    <a href="/historia/index.html">História</a>
+                    <a href="/agenda/index.html">Agenda</a>
+                    <a href="/unidades/index.html">Unidades</a>
+                    <a href="/contato/index.html">Contato</a>
                 </nav>
             </div>
 
@@ -27,6 +33,45 @@
             </div>
         </div>
     </header>
+
+<!-- Codigo do Slide -->
+    <section class="slider">
+        <div class="slider-content">
+            
+            <input type="radio" name="btn-radio" id="radio1">
+            <input type="radio" name="btn-radio" id="radio2">
+            <input type="radio" name="btn-radio" id="radio3">
+
+            <div class="slide-box primeiro">
+                <img class="img-desktop" src="img/slide-1.jpg" alt="slide 1">
+                <img class="img-mobile" src="img/slide-1-mob.jpg" alt="slide 1">
+            </div>
+
+            <div class="slide-box">
+                <img class="img-desktop" src="img/slide-2.jpg" alt="slide 3">
+                <img class="img-mobile" src="img/slide-2-mob.jpg" alt="slide 1">
+            </div>
+
+            <div class="slide-box">
+                <img class="img-desktop" src="img/slide-3.jpg" alt="slide 3">
+                <img class="img-mobile" src="img/slide-3-mob.jpg" alt="slide 3">
+            </div>
+
+            <div class="nav-auto">
+                <div class="auto-btn1"></div>
+                <div class="auto-btn2"></div>
+                <div class="auto-btn3"></div>
+            </div>
+
+            <div class="nav-manual">
+                <label for="radio1" class="manual-btn"></label>
+                <label for="radio2" class="manual-btn"></label>
+                <label for="radio3" class="manual-btn"></label>
+            </div>
+
+        </div>
+    </section>
+<!-- Fim do codigo do Slide -->
 
     <script src="animar.js"></script>
 
