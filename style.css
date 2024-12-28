@@ -75,7 +75,7 @@ header{
 /* Estilização do menu mobile */
 @media screen and (max-width: 1030px) {
     .menu, .sociais{
-        display: none;
+        display: flex;
     }
 
     .logo{
