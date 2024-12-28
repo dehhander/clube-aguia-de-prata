@@ -179,7 +179,7 @@ header{
     }
 
     .menu, .sociais{
-        display: none;
+        display: flex;
     }
 
     .logo{
