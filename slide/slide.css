@@ -17,9 +17,10 @@ section.slider{
     display: none;
 }
 
+/* Regulagem do slide */
 .slide-box{
     width: 25%;
-    height: auto;
+    height: 300px;
     position: relative;
     text-align: center;
     transition: 1s;
@@ -27,19 +28,21 @@ section.slider{
 
 .slide-box img{
     width: 100%;
+    height: auto;
 }
 
 .nav-manual, .nav-auto{
     position: absolute;
     width: 100%;
-    margin-top: 35%;
+    margin-top: 24.5%; /* Altura do botão */
     display: flex;
     justify-content: center;
 }
 
+/* Regulagem do botão */
 .nav-manual .manual-btn, .nav-auto div{
     border: 1px solid #ff0054;
-    padding: 10px;
+    padding: 4px;
     border-radius: 50%;
     cursor: pointer;
     transition: 0.2s;
