@@ -10,6 +10,7 @@
 .container{
     max-width: 1080;
     margin: 0 auto;
+    height: 75px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -21,8 +22,15 @@ header{
     padding: 10px;
 }
 
+.logo {
+    transform: scale(0.7); /* Reduz a imagem para 50% do tamanho original */
+    transform-origin: top left; /* Define a origem da transformação */
+}
+
 .logo{
-    width: 100%;
+    position: relative;
+    top: 18px;
+    left: -90px;
     cursor: pointer;
 }
 
@@ -31,7 +39,7 @@ header{
 }
 
 .menu{
-    width: 50%;
+    width: 0%;
 }
 
 .menu nav a{
@@ -73,7 +81,7 @@ header{
 }
 
 /* Estilização do menu mobile */
-@media screen and (max-width: 1030px) {
+@media screen and (max-width: 600px) {
     .menu, .sociais{
         display: flex;
     }
@@ -82,3 +90,100 @@ header{
         width: 100%
     }
 }
+
+.page-home{-webkit-text-size-adjust: 100%;
+-webkit-tap-highlight-color: rgba(0,0,0,0);
+box-sizing: border-box;
+font-family: inherit;
+font-weight: 500;
+line-height: 1.1;
+color: inherit;
+font-size: 24px;
+padding-bottom: 9px;
+margin: 50px 30px 20px;
+border-bottom: 1px solid #eee;
+}
+
+/* Exemplo */
+
+/* Reset Básico */
+h1, h2, p, ul, li, a, img, input, button, textarea {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    justify-content: center;
+  }
+  
+  
+  /* Slider */
+  .slider {
+    background: hsla(246, 89%, 45%, 0.753);
+    color: #fff;
+    text-align: center;
+    padding: 50px 20px;
+  }
+  
+  .slider h1 {
+    font-size: 2.5rem;
+  }
+  
+  .slider p {
+    font-size: 1.2rem;
+  }
+  
+  /* Seção Geral */
+  section {
+    padding: 50px 0;
+  }
+  
+  .about, .services, .contact {
+    text-align: center;
+  }
+  
+  .services .cards {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .services .card {
+    background: #f4f4f4;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    width: 30%;
+    text-align: center;
+  }
+  
+  /* Formulário de Contato */
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 50%;
+    margin: 0 auto;
+  }
+  
+  form input, form textarea, form button {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #fff;
+    border-radius: 5px;
+  }
+  
+  form button {
+    background: #000;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  /* Rodapé */
+  footer {
+    background: #000;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 0.9rem;
+  }
+  
