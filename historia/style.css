@@ -1,11 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:wght@700&display=swap');
 
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Crimson Text", serif;
-    word-wrap: break-word;
+    font-family: "Crimson text", serif;
 }
 
 .container{
@@ -17,48 +15,24 @@
 }
 
 header{
-    background-color: #000000;
+    background-color: black;
     width: 100%;
-    padding: 10px;
 }
 
 .logo{
-    width: 25%;
-    cursor: pointer;
-}
-
-.sociais{
-    width: 25%;
-}
-
-.menu{
-    width: 50%;
-}
-
-.menu nav a{
-    color: #ffffff;
-    text-decoration: none;
-    padding-right: 50px;
-    font-size: 18px;
     position: relative;
+    top: 0;
+    left: -15%;
+    transform: scale(0.9);  /* Reduz a imagem para 50% do tamanho original */
 }
 
-.menu nav a::after{
-    content: " ";
-    width: 0px;
-    height: 4px;
-    background-image: linear-gradient(45deg, #ff2500, #ff7100);
-    position: absolute;
-    top: 25px;
-    left: 0;
-    transition: width 0.10s;
+.social{
+    position: relative;
+    top: 0;
+    left: 15%;
 }
 
-.menu nav a:hover::after{
-    width: 55px;
-}
-
-.sociais button{
+.social button{
     width: 40px;
     height: 40px;
     background-image: linear-gradient(45deg, #ff2500, #ff7100);
@@ -68,242 +42,152 @@ header{
     margin-right: 10px;
 }
 
-.sociais button i{
+.social button i{
     font-size: 20px;
     color: #ffffff;
 }
 
-/* Estilização do menu mobile */
-@media screen and (max-width: 1030px) {
-
-/*mobile*/
-    .img1-mobile{
-        width: 173%;
-        height: 380px;
-        display: block;
-        margin: 460px -95px; 
-    }
-
-
-    .p-txt1{
-        width: 330px;
-        font-size: 14px;
-        position: relative;
-        top: 30px;
-        text-align: justify;
-    }
-/*mobile*/
-    .logo2{
-        width: 173%;
-        height: 300px;
-        display: flex;
-        margin: 580px 5px;  
-    }
-
-    .p-txt2{
-        width: 330px;
-        font-size: 14px;
-        position: relative;
-        top: -220px;
-        left: -523px;
-    }
-
-    /* Nosso Logo */
-    .h1-2{
-        margin: -500px 0px;
-    }
-
-    .linha1-mobile{
-        position: relative;
-        top: 515px;
-        left: 0;
-        
-    }
-
-/*Grito de Guerra */
-    .h1-3-mobile{
-        display: flex;
-        position: relative;
-        top: -30px; /* Espaçamento acima e abaixo */
-        left: 0px; /* Espaçamento lateral, positivo para direita negativo para esquerda */
-    }
-
-    .linha2-mobile{
-        display: flex;
-        position: relative;
-        top: 15px; /* Espaçamento acima e abaixo */
-        left: 0px; /* Espaçamento lateral, positivo para direita negativo para esquerda */
-    }
-/*Aguia de Prata*/
-    .h4-1-mobile{
-        display: flex;
-        position: relative;
-        top: -1290px;
-        left: 0px;        
-    }
-
-    .p-txt3-mobile{
-        width: 330px;
-        height: 150px;
-        display: flex;
-        position: relative;
-        top: 50px; /* Espaçamento acima e abaixo */
-        left: 0px; /* Espaçamento lateral, positivo para direita negativo para esquerda */
-    }
-
-    .linha3-mobile{
-        display: flex;
-        position: relative;
-        top: -35px; /* Espaçamento acima e abaixo */
-        left: 0px; /* Espaçamento lateral, positivo para direita negativo para esquerda */
-    }
-
-    .p-1-mobile{
-        width: 330px;
-        height: 20px;
-        font-size: 10px;
-        display: flex;
-        position: relative;
-        top: 5px; /* Espaçamento acima e abaixo */
-        left: -350px; /* Espaçamento lateral, positivo para direita negativo para esquerda */
-        width: 300px;
-    }
-
-    .p-2-mobile{
-        font-size: 10px;
-        display: flex;
-        position: relative;
-        top: 0px; /* Espaçamento acima e abaixo */
-        left: -365px; /* Espaçamento lateral, positivo para direita negativo para esquerda */
-        width: 300px;
-    }
-
-    .menu, .sociais{
-        display: flex;
-    }
-
-    .logo{
-        width: 100%
-    }
+.menu{
+    position: relative;
+    top: 0;
+    left: 0%;
+    text-align: center;
 }
 
-.h1-1 {
-    width: 200px;
+.menu nav a{
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 19px;
     position: relative;
-    top: 5px; /* Move para baixo */
-    left: 0px; /* Move para a direita */
+    padding: 20px;
+}
+
+.menu nav a::after{
+    width: 0;
+    background-image: linear-gradient(45deg, #ff2500, #ff7100);
+    position: relative;
+    top: 25px;
+    left: 0;
+    transition: width 0.10s;
+}
+
+menu nav a:hover::after{
+    width: 55px;
+}
+
+
+ /* Linha */
+ hr{
+    border: none;
+    height: 1px;
+    background: linear-gradient(to right, #adbdf0, #ece8e8, #adbdf0); /* Gradiente */
+    margin: 20px 5%;
+    position: relative;
+    top: -335px;
   }
 
-  h1 {
-    width: 200px;
+   /* Nossa História */
+   .tittle{
+  font-size: 30px;
+  margin: 25px 5%;
+}
+
+span{
+    width: 70%;
+    margin: 30px;
+    display: inline-block;
     position: relative;
-    top: 20px; /* Move para baixo */
-    left: 30px; /* Move para a direita */
+    top: 10px;
+    left: 2.5%;
+    text-align: justify;   /* Alinha o texto nos dois lados */
+    font-size: 18px; /* Ajuste de tamanho da fonte */
+    line-height: 1.2; /* Espaçamento entre linhas para melhor legibilidade */
   }
-  
 
-p{
-    font-family: arial;
-    text-align:justify;
-}
-
-.box-txt1{
-    width: 520px;
-    height: 40px;
-    position: relative;
-    top: 30px;
-    left: 30px;
-    background-color: #fff;
-}
-
-.img1{
+.about-img{
     display: flex;
-    justify-content: right;
+    width: 20%; /* Prporção do tamanho da image */
+    height: auto;
     position: relative;
-    top: -10px;
-    left: -180px;
-}
+    top: 0px;
+    margin-top: -21%; 
+    left: 76%;/* Espaço entre a imagem e o texto */ 
+}        
 
-.linha1 {
-    width: 100%; /* Largura da linha */
-    height: 1px; /* Espessura da linha */
-    background-color: rgb(235, 231, 231); /* Cor da linha */
-    margin: 2% 0; /* Espaçamento acima e abaixo */
-    margin-left: 0%;
-    top: 20px;
+/* Fim */
+
+  .logo2 {
+    display: flex;
+    width: 25%; /* Prporção do tamanho da image */
+    height: auto;
+    position: relative;
+    top: -230px;
+    left: 12%;/* Espaço entre a imagem e o texto */ 
   }
 
-  .logo2{
-        position: relative;
-        top: -80px;
-        left: 35px;
-}
-
-.box-txt2{
-    width: 700px;
-    height: 45px;
+  .span2{
+    width: 50%;
+    margin: 30px;
+    display: inline-block;
     position: relative;
-    top: -450px; /* Espaçamento acima e abaixo */
-    left: 550px; /* Espaçamento lateral, positivo para direita negativo para esquerda */
-    background-color: #fff;
-}
+    top: 70px;
+    left: 42.5%;
+    text-align: justify;   /* Alinha o texto nos dois lados */
+    font-size: 18px; /* Ajuste de tamanho da fonte */
+    line-height: 1.2; /* Espaçamento entre linhas para melhor legibilidade */
+  }
 
-.linha2 {
-    width: 100%; /* Largura da linha */
-    height: 1px; /* Espessura da linha */
-    background-color: rgb(235, 231, 231); /* Cor da linha */
-    margin: 5% 0; /* Espaçamento acima e abaixo */
-    margin-left: 0%;
+  .nosso-logo{
+    font-size: 30px;
+    position: relative;
+    top: 40px;
+    margin-left: 4.7%;
+  }
+
+  /* Linha */
+  .hr2{
+    border: none;
+    height: 1px;
+    background: linear-gradient(to right, #adbdf0, #ece8e8, #adbdf0); /* Gradiente */
+    margin: 20px 5%;
+    position: relative;
+    top: -550px;
+  }
+
+  .grito{
+    font-size: 30px;
+    position: relative;
     top: -150px;
-    position: relative;
+    margin-left: 4.7%;
   }
 
-/* Grito de Guerra */
-  .h1-3 {
-    width: 220px;
+   /* Linha */
+   .hr3{
+    border: none;
+    height: 1px;
+    background: linear-gradient(to right, #adbdf0, #ece8e8, #adbdf0); /* Gradiente */
+    margin: 20px 5%;
     position: relative;
-    top: -90px; /* Move para baixo */
-    left: 30px; /* Move para a direita */
+    top: -145px;
   }
 
-  .p-txt3{
-    width: 330px;
-    height: 80px;
+  .span3{
+    width: 30%;
+    margin: 30px;
+    display: inline-block;
     position: relative;
-    top: -155px;
-    left: 30px;
-}
-
-/* Água de Prata */
-.h4-1{
-    display: flex;
-    position: absolute; 
-    top: 1150px;
-    left: 30px;   
-}
-
-.linha3 {
-    width: 100%; /* Largura da linha */
-    height: 1px; /* Espessura da linha */
-    background-color: rgb(235, 231, 231); /* Cor da linha */
-    margin: 5% 0; /* Espaçamento acima e abaixo */
-    margin-left: 0%;
-    top:30px;
-    position: relative;
+    top: -160px;
+    left: 2.5%;
+    text-align: justify;   /* Alinha o texto nos dois lados */
+    font-size: 18px; /* Ajuste de tamanho da fonte */
+    line-height: 1.2; /* Espaçamento entre linhas para melhor legibilidade */
   }
-
-  .p-1{
-    width: 500px;
-    position: relative;
-    top: -20px;
-    left: 400px;
-  }
-
-  .p-2{
-    width: 500px;
-    position: relative;
-    top: -20px;
-    left: 445px;
-  }
-
   
+  /* Rodapé */
+  footer {
+    background: #000;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 0.9rem;
+  }
