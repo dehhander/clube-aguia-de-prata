@@ -1,9 +1,20 @@
-const menuDvi = document.getElementById('menu-mobile')
-const btnAnimar = document.getElementById('btn-menu')
+// Slide //
 
-menuDvi.addEventListener('click', animarMenu)
+var radio = document.querySelector('.manual-btn')
+var cont = 1
 
-function animarMenu(){
-    menuDvi.classList.toggle('abrir')
-    btnAnimar.classList.toggle('ativo')
+document.getElementById('radio1').checked = true
+
+setInterval(() => {
+    proximaImg()
+}, 5000)
+
+function proximaImg(){
+    cont++
+
+    if(cont > 3){
+        cont = 1 
+    }
+
+    document.getElementById('radio'+cont).checked = true
 }
