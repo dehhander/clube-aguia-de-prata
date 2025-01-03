@@ -11,13 +11,13 @@
 <body>
     <header>
         <div class="container">
-            <a href="https://dehhander.github.io/clube-aguia-de-prata/" class="logo"><img src="img/logo.png"></a>
+            <a href="index.htm" class="logo"><img src="/img/logo.png"></a>
             <div class="menu">
                 <nav>
-                    <a href="https://dehhander.github.io/clube-aguia-de-prata/historia/">História</a>
-                    <a href="https://dehhander.github.io/clube-aguia-de-prata/agenda/">Agenda</a>
-                    <a href="https://dehhander.github.io/clube-aguia-de-prata/unidades/">Unidades</a>
-                    <a href="https://dehhander.github.io/clube-aguia-de-prata/contato/">Contato</a>
+                    <a href="#">História</a>
+                    <a href="#">Agenda</a>
+                    <a href="#">Unidades</a>
+                    <a href="#">Contato</a>
                 </nav>
             </div>
 
@@ -33,19 +33,23 @@
     </header>
 
    <hr>  
+<!-- Logos das Unidades -->
+<div class="body2">
+    <div class="logo-container">
+        <img src="/unidades/img/visao-de-aguia-logo.jfif" alt="Visão de Águia" class="unit-logo" onclick="showHistory('visao-de-aguia')">
+        <img src="/unidades/img/aquila-logo.png" alt="Áquila" class="unit-logo" onclick="showHistory('aquila')">
+        <img src="/unidades/img/aguias-mensageiras-logo1.png" alt="Águias Mensageiras" class="unit-logo" onclick="showHistory('aguias-mensageiras')">
+    </div>
 
-<h1>Logo mais...</h1>
-<style>
-  h1{
-    display: flex;
-    position: relative;
-    top: -5px;
-    left: 550px;
-    margin-bottom: 10px;
-  }
-</style>
+    <div id="unit-history" class="history-section">
+        <h2 id="unit-title"></h2>
+        <div id="unit-content" class="content-container"></div>
+    </div>
 
- 
+    <script src="script.js"></script>
+  </div>
+<!-- Fim dos Logos -->
+
 
   <!-- Rodapé -->
   <footer>
