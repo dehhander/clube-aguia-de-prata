@@ -1,323 +1,415 @@
 
 *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Crimson text", serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Crimson text", serif;
 }
 
 .container{
-    max-width: 1080;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  max-width: 1080;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 header{
-    background-color: black;
-    width: 100%;
+  background-color: black;
+  width: 100%;
 }
 
 .logo{
-    position: relative;
-    top: 0;
-    left: -15%;
-    transform: scale(0.9);  /* Reduz a imagem para 50% do tamanho original */
+  position: relative;
+  top: 0;
+  left: -15%;
+  transform: scale(0.9);  /* Reduz a imagem para 50% do tamanho original */
 }
 
 .social{
-    position: relative;
-    top: 0;
-    left: 15%;
+  position: relative;
+  top: 0;
+  left: 15%;
 }
 
 .social button{
-    width: 40px;
-    height: 40px;
-    background-image: linear-gradient(45deg, #ff2500, #ff7100);
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    margin-right: 10px;
+  width: 40px;
+  height: 40px;
+  background-image: linear-gradient(45deg, #ff2500, #ff7100);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-right: 10px;
 }
 
 .social button i{
-    font-size: 20px;
-    color: #ffffff;
+  font-size: 20px;
+  color: #ffffff;
 }
 
 .menu{
-    position: relative;
-    top: 0;
-    left: 0%;
-    text-align: center;
+  position: relative;
+  top: 0;
+  left: 0%;
+  text-align: center;
 }
 
 .menu nav a{
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 19px;
-    position: relative;
-    padding: 20px;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 19px;
+  position: relative;
+  padding: 20px;
 }
 
 .menu nav a::after{
-  content: " "; /* Para aparecer a animação */
-  width: 0%;
-  height: 4px; /* Largura da animação */
-  background-image: linear-gradient(45deg, #ff2500, #ff7100);
-  position: absolute;
-  top: 50px;
-  left: 20px;
-  transition: 0.10s ease-in-out;
+content: " "; /* Para aparecer a animação */
+width: 0%;
+height: 4px; /* Largura da animação */
+background-image: linear-gradient(45deg, #ff2500, #ff7100);
+position: absolute;
+top: 50px;
+left: 20px;
+transition: 0.10s ease-in-out;
 }
 
 .menu nav a:hover::after{
-  width: 60px; /* Comprimento da animação */
+width: 60px; /* Comprimento da animação */
 }
 
-.menu nav a:hover{
-  color: #ddd; /* Altera a cor do texto ao passar o mouse */
-  text-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Adiciona a sombra ao texto */
+/* Estilo do Modal */
+.modal {
+  display: none; /* Escondido por padrão */
+  position: fixed; /* Fica em cima de tudo */
+  z-index: 1000; /* Fica na frente */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Fundo escuro com opacidade */
+}
+
+/* Adicione esta classe para exibir o modal */
+.modal.show {
+  display: block; /* Exibe o modal */
+}
+
+
+.modal-content {
+  background-color: white;
+  margin: 15% auto; /* 15% do topo e centralizado */
+  padding: 20px;
+  border-radius: 10px;
+  width: 30%; /* Largura do modal */
+  text-align: center; /* Centraliza o texto */
+}
+
+/* Conteúdo editável só aparece se o usuário estiver logado */
+.editable-content {
+  display: none; /* Esconde por padrão */
+  background-color: #f0f8ff; /* Cor de fundo para indicar a edição */
+  border: 1px dashed #ffffff; /* Borda azul para indicar edição */
+}
+
+.logged-in .editable-content {
+  display: block; /* Exibe quando o usuário está logado */
+}
+
+/* Borda e fundo de edição apenas para o cliente logado */
+[contenteditable="true"] {
+
+  padding: 5px;
+  cursor: text; /* Muda o cursor para indicar que o campo pode ser editado */
+}
+
+
+
+/* Fechar Modal */
+.modal-content .close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* Estilo dos Inputs */
+.modal-content input {
+  width: 80%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.modal-content button[type="submit"] {
+  background-color: #007BFF; /* Cor do botão de login */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Estilo do botão de login no cabeçalho */
+.login-btn {
+  display: flex;
+  width: 40px;
+  height: 40px;
+  font-size: 14px;
+  font-weight: bold; /* Deixa o texto em negrito */
+  color: #ffffff;
+  padding: 11px 2px;
+  position: relative;
+  top: -1796px;
+  left: 96%;
+  background-image: linear-gradient(45deg, #ff2500, #ff7100);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-right: 50px;
 }
 
 /* Slide */
 
 section.slider{
-    margin: 0 auto;
-    width: 100%;
-    height: auto;
-    padding: 0 !important;
-    overflow: hidden;
+  margin: 0 auto;
+  width: 100%;
+  height: auto;
+  padding: 0 !important;
+  overflow: hidden;
 }
 
 .slider-content{
-    width: 400%;
-    height: auto;
-    display: flex;
+  width: 400%;
+  height: auto;
+  display: flex;
 }
 
 .slider-content input, .img-mobile{
-    display: none;
+  display: none;
 }
 
 /* Regulagem do slide */
 .slide-box{
-    width: 25%;
-    height: 300px;
-    position: relative;
-    text-align: center;
-    transition: 1s;
+  width: 25%;
+  height: 300px;
+  position: relative;
+  text-align: center;
+  transition: 1s;
 }
 
 .slide-box img{
-    width: 100%;
-    height: auto;
+  width: 100%;
+  height: auto;
+  
 }
 
 .nav-manual, .nav-auto{
-    position: absolute;
-    width: 100%;
-    margin-top: 24.5%; /* Altura do botão */
-    display: flex;
-    justify-content: center;
+  position: absolute;
+  width: 100%;
+  margin-top: 24.5%; /* Altura do botão */
+  display: flex;
+  justify-content: center;
 }
 
 /* Regulagem do botão */
 .nav-manual .manual-btn, .nav-auto div{
-    border: 1px solid #ff0054;
-    padding: 4px;
-    border-radius: 50%;
-    cursor: pointer;
-    transition: 0.2s;
+  border: 1px solid #ff0054;
+  padding: 4px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.2s;
 }
 
 .nav-manual .manual-btn:not(:last-child), .nav-auto div:not(:last-child){
-    margin-right: 10px;
+  margin-right: 10px;
 }
 
 .nav-manual .manual-btn:hover{
-    background-color: #ff0054;
+  background-color: #ff0054;
 }
 
 #radio1:checked ~ .nav-auto .auto-btn1, #radio2:checked ~ .nav-auto .auto-btn2, #radio3:checked ~ .nav-auto .auto-btn3{
-    background-color: #ff0054;
+  background-color: #ff0054;
 }
 
 #radio1:checked ~ .primeiro{
-    margin-left: 0%;
+  margin-left: 0%;
 }
 
 #radio2:checked ~ .primeiro{
-    margin-left: -25%;
+  margin-left: -25%;
 }
 
 #radio3:checked ~ .primeiro{
-    margin-left: -50%;
+  margin-left: -50%;
 }
 
 /* Exemplo */
 
 /* Reset Básico */
 .body2, h1, p, ul, li, a, img {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-  
-  
-  .body2 {
-    font-family: Arial, sans-serif;
-    line-height: 1.7;
-    color: #333;
-    background: #f9f9f9;
-  }
-  
-  .container2 {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-  
-  /* Cabeçalho */
-  .header2 {
-    background: #000;
-    color: #fff;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 0;
-  }
-  
-  .img {
-    max-height: 50px;
-  }
-  
-  .header2 {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-  }
-  
-  
-  .img {
-    max-height: 30px;
-    margin-left: 10px;
-  }
-  
-  /* Slider */
-  .slider {
-    background: url('slider.jpg') no-repeat center center/cover;
-    color: #fff;
-    text-align: center;
-    padding: 100px 20px;
-  }
-  
-  .slider h1 {
-    font-size: 2.5rem;
-    margin-bottom: 10px;
-  }
-  
-  .slider p {
-    font-size: 1.2rem;
-    margin-bottom: 20px;
-  }
-  
-  .slider .btn {
-    padding: 10px 20px;
-    background: #ff007f;
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 5px;
-  }
 
-  /* Linha */
-  hr{
-    border: none;
-    height: 1px;
-    background: linear-gradient(to right, #adbdf0, #ece8e8, #adbdf0); /* Gradiente */
-    margin: 20px 0;
-    position: relative;
-    top: 10px;
-  }
-  
-  /* Sobre Nós */
-  .sob{
-    position: relative;
-    top: -10px;
-  }
 
-  .about {
-    text-align: center;
-    padding: 50px 20px;
-    background: #fff;
-  }
-  
-  .about img {
-    max-width: 90%;
-    border-radius: 10px;
-    margin-top: 20px;
-  }
-  
-  /* Atividades */
-  .ativ{
-    position: relative;
-    top: -20px;
-  }
+.body2 {
+  font-family: Arial, sans-serif;
+  line-height: 1.7;
+  color: #333;
+  background: #f9f9f9;
+}
 
-  .services {
-    text-align: center;
-    padding: 50px 20px;
-    background: #f4f4f4;
-  }
-  
-  .services .cards {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-  }
-  
-  .services .card {
-    background: #fff;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    width: 30%;
-  }
-  
-  .services .card h3 {
-    margin-bottom: 10px;
-    color: #ff007f;
-  }
-  
-  /* Contato */
-  .contact {
-    text-align: center;
-    padding: 50px 20px;
-  }
-  
-  .contact .btn {
-    padding: 5px 20px;
-    background: #000;
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 5px;
-  }
-  
-  .btn{
-    position: relative;
-    top: 10px;
-  }
-  
-  /* Rodapé */
-  footer {
-    background: #000;
-    color: #fff;
-    text-align: center;
-    padding: 10px 0;
-    font-size: 0.9rem;
-  }
+.container2 {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Cabeçalho */
+.header2 {
+  background: #000;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+}
+
+.img {
+  max-height: 50px;
+}
+
+.header2 {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+
+.img {
+  max-height: 30px;
+  margin-left: 10px;
+}
+
+/* Slider */
+.slider {
+  background: url('slider.jpg') no-repeat center center/cover;
+  color: #fff;
+  text-align: center;
+  padding: 100px 20px;
+}
+
+.slider h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.slider p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.slider .btn {
+  padding: 10px 20px;
+  background: #ff007f;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+/* Linha */
+hr{
+  border: none;
+  height: 1px;
+  background: linear-gradient(to right, #adbdf0, #ece8e8, #adbdf0); /* Gradiente */
+  margin: 20px 0;
+  position: relative;
+  top: 10px;
+}
+
+/* Sobre Nós */
+.sob{
+  position: relative;
+  top: -10px;
+  font-size: 40px;
+}
+
+.about {
+  font-size: 20px;
+  text-align: center;
+  padding: 50px 20px;
+  background: #fff;
+}
+
+.about img {
+  max-width: 90%;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+/* Atividades */
+.ativ{
+  font-size: 30px;
+  position: relative;
+  top: -20px;
+}
+
+.services {
+  text-align: center;
+  padding: 50px 20px;
+  background: #f4f4f4;
+}
+
+.services .cards {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.services .card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  width: 30%;
+}
+
+.services .card h3 {
+  margin-bottom: 10px;
+  color: #0a15b1fd;
+}
+
+/* Contato */
+.contact {
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.contact .btn {
+  padding: 5px 20px;
+  background: #000;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+.btn{
+  position: relative;
+  top: 10px;
+}
+
+/* Rodapé */
+footer {
+  background: #000;
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+  font-size: 0.9rem;
+}
