@@ -5,7 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <script src="animar.js" defer></script>
+    <script type="module" src="animar.js" defer></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js"></script>
+    <script src="js/login.js" defer></script> <!-- Arquivo JavaScript de login -->
     <title>Águia de Prata</title>
 </head>
 <body>
@@ -21,21 +24,22 @@
                 </nav>
             </div>
 
-        <div class="social">
-            <a href="https://www.instagram.com/clubeaguiadeprata/" target="_blank">
-                <button><i class="fa-brands fa-instagram"></i></button></a>
-            <a href="https://www.facebook.com/clubeaguiadeprata/?locale=pt_BR" target="_blank">
-            <button><i class="fa-brands fa-facebook"></i></button></a>
+            <div class="social">
+                <a href="https://www.instagram.com/clubeaguiadeprata/" target="_blank">
+                    <button><i class="fa-brands fa-instagram"></i></button></a>
+                <a href="https://www.facebook.com/clubeaguiadeprata/?locale=pt_BR" target="_blank">
+                    <button><i class="fa-brands fa-facebook"></i></button></a>
                 <a href="https://www.youtube.com/channel/UCgtxBK9ygrPW1dkWYeqOZ4Q" target="_blank">
-            <button><i class="fa-brands fa-youtube"></i></button></a>
-        </div>
+                    <button><i class="fa-brands fa-youtube"></i></button></a>
+                <!-- Botão de Login Adicionado -->
+                
+            </div>
         </div>
     </header>
 
     <!-- Código do slide -->
     <section class="slider">
         <div class="slider-content">
-            
             <input type="radio" name="btn-radio" id="radio1">
             <input type="radio" name="btn-radio" id="radio2">
             <input type="radio" name="btn-radio" id="radio3">
@@ -66,66 +70,74 @@
                 <label for="radio2" class="manual-btn"></label>
                 <label for="radio3" class="manual-btn"></label>
             </div>
-
         </div>
     </section>
     <hr>
-<!-- Fim do codigo do Slide -->
+    
+    <!-- Conteúdo da página -->
+    <div class="body2">
+        <section id="sobre" class="about">
+            <div class="container2">
+                <h2 class="sob" contenteditable="true">Sobre o Clube</h2>
+                <p contenteditable="true">O Clube Águia de Prata é um espaço dedicado ao lazer, esportes e desenvolvimento pessoal. Com infraestrutura de qualidade, oferecemos atividades para todas as idades.</p>
+                <img src="img/sobre.jpg" alt="Sobre o clube" class="about-image">
+                
+            </div>
+        </section>
 
-<h3 class="page-home">
-    <!-- Seja bem-vindo ao Clube Águia de Prata! */-->
-</h3>
+        <section id="atividades" class="services">
+            <div class="container2">
+                <h2 class="ativ" contenteditable="true">Nossas Atividades</h2>
+                <div class="cards">
+                    <div class="card" contenteditable="true">
+                        <h3>Mental</h3>
+                        <p>Quadras, campos e muito mais para você se manter ativo.</p>
+                    </div>
+                    <div class="card" contenteditable="true">
+                        <h3>Físico</h3>
+                        <p>Organizamos eventos sociais e culturais para toda a família.</p>
+                    </div>
+                    <div class="card" contenteditable="true">
+                        <h3>Espiritual</h3>
+                        <p>Biblía, áreas de descanso e espaços verdes para relaxar.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-<!-- Exemplo -->
-<div class="body2">
-
-  
-
-  <!-- Sobre Nós -->
-  <section id="sobre" class="about">
-    <div class="container2">
-      <h2 class="sob">Sobre o Clube</h2>
-      <p>O Clube Águia de Prata é um espaço dedicado ao lazer, esportes e desenvolvimento pessoal. Com infraestrutura de qualidade, oferecemos atividades para todas as idades.</p>
-      <img src="img/sobre.jpg" alt="Sobre o clube" class="about-image">
+        <section id="contato" class="contact">
+            <div class="container2">
+                <h2 contenteditable="true">Fale Conosco</h2>
+                <p contenteditable="true">Entre em contato para saber mais sobre o clube ou agendar uma visita.</p>
+                <a href="mailto:contato@aguia.com.br" class="btn">Envie um E-mail</a>
+            </div>
+        </section>
     </div>
-  </section>
 
-  <!-- Atividades -->
-  <section id="atividades" class="services">
-    <div class="container2">
-      <h2 class="ativ">Nossas Atividades</h2>
-      <div class="cards">
-        <div class="card">
-          <h3>Mental</h3>
-          <p>Quadras, campos e muito mais para você se manter ativo.</p>
+    <!-- Modal de Login -->
+    <button id="login-btn" class="login-btn">Login</button>
+    <div id="login-modal" class="modal">
+        <div class="modal-content"> 
+            <span class="close">&times;</span>
+            <h2>Login</h2>
+            <form id="login-form">
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" placeholder="Digite seu e-mail" required>
+                <label for="password">Senha:</label>
+                <input type="password" id="password" placeholder="Digite sua senha" required>
+                <button type="submit">Entrar</button>
+            </form>
         </div>
-        <div class="card">
-          <h3>Fisíco</h3>
-          <p>Organizamos eventos sociais e culturais para toda a família.</p>
-        </div>
-        <div class="card">
-          <h3>Espiritual</h3>
-          <p>Biblía, áreas de descanso e espaços verdes para relaxar.</p>
-        </div>
-      </div>
     </div>
-  </section>
 
-  <!-- Contato Rápido -->
-  <section id="contato" class="contact">
-    <div class="container2">
-      <h2>Fale  Conosco</h2>
-      <p>Entre em contato para saber mais sobre o clube ou agendar uma visita.</p>
-      <a href="mailto:contato@aguia.com.br" class="btn">Envie um E-mail</a>
-    </div>
-  </section>
+    <script src="js/firebase.js"></script>
 
-  <!-- Rodapé -->
+      <!-- Rodapé  -->
   <footer>
     <div class="container2">
       <p>&copy; 2025 Clube Águia de Prata - APL - 3ª Região - Jardim Artartica</p>
     </div>
-  </footer></div>
+  </footer></div> 
     
 </body>
 </html>
