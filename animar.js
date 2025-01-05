@@ -99,7 +99,7 @@ function iniciarDeslogAutomatico() {
             alert("Você foi deslogado devido à inatividade.");
             localStorage.removeItem("isLoggedIn");
             window.location.reload();
-        }, 15 * 60 * 1000); // 15 minutos
+        }, 1 * 60 * 1000); // 15 minutos
     };
 
     // Monitora eventos de interação do usuário
