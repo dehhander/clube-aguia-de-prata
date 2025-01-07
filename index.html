@@ -8,7 +8,7 @@
     <script type="module" src="animar.js" defer></script>
     <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js"></script>
-    <script src="js/login.js" defer></script> <!-- Arquivo JavaScript de login -->
+    <script src="js/login.js" defer></script>
     <title>Águia de Prata</title>
 </head>
 <body>
@@ -31,13 +31,10 @@
                     <button><i class="fa-brands fa-facebook"></i></button></a>
                 <a href="https://www.youtube.com/channel/UCgtxBK9ygrPW1dkWYeqOZ4Q" target="_blank">
                     <button><i class="fa-brands fa-youtube"></i></button></a>
-                <!-- Botão de Login Adicionado -->
-                
             </div>
         </div>
     </header>
 
-    <!-- Código do slide -->
     <section class="slider">
         <div class="slider-content">
             <input type="radio" name="btn-radio" id="radio1">
@@ -74,14 +71,12 @@
     </section>
     <hr>
     
-    <!-- Conteúdo da página -->
     <div class="body2">
         <section id="sobre" class="about">
             <div class="container2">
                 <h2 class="sob" contenteditable="true">Sobre o Clube</h2>
                 <p contenteditable="true">O Clube Águia de Prata é um espaço dedicado ao lazer, esportes e desenvolvimento pessoal. Com infraestrutura de qualidade, oferecemos atividades para todas as idades.</p>
                 <img src="img/sobre.jpg" alt="Sobre o clube" class="about-image">
-                
             </div>
         </section>
 
@@ -114,7 +109,8 @@
         </section>
     </div>
 
-    <!-- Modal de Login -->
+    <button id="save-changes" class="save-btn" style="display: none;">Salvar Alterações</button>
+
     <button id="login-btn" class="login-btn">admin</button>
     <div id="login-modal" class="modal">
         <div class="modal-content"> 
@@ -132,12 +128,11 @@
 
     <script src="js/firebase.js"></script>
 
-      <!-- Rodapé  -->
-  <footer>
-    <div class="container2">
-      <p>&copy; 2025 Clube Águia de Prata - APL - 3ª Região - Jardim Artartica</p>
-    </div>
-  </footer></div> 
+    <footer>
+        <div class="container2">
+            <p>&copy; 2025 Clube Águia de Prata - APL - 3ª Região - Jardim Artartica</p>
+        </div>
+    </footer>
     
 </body>
 </html>
