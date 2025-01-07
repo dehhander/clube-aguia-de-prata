@@ -1,8 +1,6 @@
-// Configuração do Firebase
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
 import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js";
 
-// Sua configuração do Firebase
 const firebaseConfig = {
     apiKey: "AIzaSyAvEcFej2F3XRls4PxIei2iCsSPI2YZcEY",
     authDomain: "clube-aguia-de-prata.firebaseapp.com",
@@ -13,9 +11,41 @@ const firebaseConfig = {
     measurementId: "G-2KNQ14G0K5"
 };
 
-// Inicialize o Firebase
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
+
+// Variáveis para o sistema de salvamento
+const saveButton = document.getElementById('save-changes');
+const editableElements = document.querySelectorAll('[contenteditable="true"]');
+let hasUnsavedChanges = false;
+
+// Adiciona evento para cada elemento editável
+editableElements.forEach((el) => {
+    el.addEventListener('input', () => {
+        hasUnsavedChanges = true;
+        saveButton.style.display = 'block';
+    });
+});
+
+// Função para salvar alterações
+function saveChanges() {
+    const savedContent = {};
+    
+    editableElements.forEach((el) => {
+        const identifier = el.getAttribute('id') || el.innerText;
+        savedContent[identifier] = el.innerText;
+    });
+    
+    localStorage.setItem('savedContent', JSON.stringify(savedContent));
+    
+    hasUnsavedChanges = false;
+    saveButton.style.display = 'none';
+    
+    alert('Alterações salvas com sucesso!');
+}
+
+// Adiciona evento de clique ao botão de salvar
+saveButton.addEventListener('click', saveChanges);
 
 // Lógica do Slider
 var cont = 1;
@@ -23,14 +53,14 @@ document.getElementById('radio1').checked = true;
 
 setInterval(() => {
     proximaImg();
-}, 5000); // Troca de imagem a cada 5 segundos
+}, 5000);
 
 function proximaImg() {
     cont++;
     if (cont > 3) {
-        cont = 1; // Reseta o contador se passar do número de slides
+        cont = 1;
     }
-    document.getElementById('radio' + cont).checked = true; // Muda a imagem
+    document.getElementById('radio' + cont).checked = true;
 }
 
 // Referências aos elementos
@@ -38,7 +68,6 @@ const loginBtn = document.getElementById("login-btn");
 const loginModal = document.getElementById("login-modal");
 const closeModal = document.querySelector(".close");
 const loginForm = document.getElementById("login-form");
-const editableElements = document.querySelectorAll('[contenteditable="true"]');
 
 // Abrir modal de login
 loginBtn.addEventListener("click", () => {
@@ -59,28 +88,22 @@ window.addEventListener("click", (e) => {
 
 // Processar login
 loginForm.addEventListener("submit", (e) => {
-    e.preventDefault(); // Impede o envio do formulário
+    e.preventDefault();
   
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
   
     signInWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
-            // Login bem-sucedido
             alert("Login bem-sucedido!");
-            
-            // Armazenar a informação de login no localStorage
-            localStorage.setItem("isLoggedIn", "true");  // Usuário está logado
-            
-            // Fechar o modal de login
+            localStorage.setItem("isLoggedIn", "true");
             loginModal.style.display = "none";
             
-            // Exibir conteúdo editável
             editableElements.forEach((el) => {
-                el.style.pointerEvents = "auto"; // Habilita a edição
+                el.style.pointerEvents = "auto";
             });
             
-            iniciarDeslogAutomatico(); // Inicia o temporizador para logout automático
+            iniciarDeslogAutomatico();
         })
         .catch((error) => {
             const errorCode = error.code;
@@ -89,27 +112,25 @@ loginForm.addEventListener("submit", (e) => {
         });
 });
 
-// Função 1: Adicionar timeout para deslogar automaticamente após 15 minutos de inatividade
+// Função para deslogar automaticamente
 let timeoutID;
 function iniciarDeslogAutomatico() {
-    // Reinicia o timeout sempre que o usuário interagir com a página
     const resetTimeout = () => {
         clearTimeout(timeoutID);
         timeoutID = setTimeout(() => {
             alert("Você foi deslogado devido à inatividade.");
             localStorage.removeItem("isLoggedIn");
             window.location.reload();
-        }, 1 * 60 * 1000); // 15 minutos
+        }, 1 * 60 * 1000);
     };
 
-    // Monitora eventos de interação do usuário
     document.addEventListener("mousemove", resetTimeout);
     document.addEventListener("keydown", resetTimeout);
 
-    resetTimeout(); // Inicia o temporizador no momento do login
+    resetTimeout();
 }
 
-// Função 2: Permitir login ao pressionar "Enter"
+// Login com Enter
 loginForm.addEventListener("keydown", (e) => {
     if (e.key === "Enter") {
         e.preventDefault();
@@ -117,21 +138,34 @@ loginForm.addEventListener("keydown", (e) => {
     }
 });
 
-// Verificar se o usuário está logado ao carregar a página
+// Verificar login ao carregar a página
 window.addEventListener("DOMContentLoaded", (event) => {
     if (localStorage.getItem("isLoggedIn") === "true") {
-        // Exibir conteúdo editável
         editableElements.forEach((el) => {
-            el.style.pointerEvents = "auto"; // Habilita a edição
+            el.style.pointerEvents = "auto";
+        });
+        
+        const savedContent = JSON.parse(localStorage.getItem('savedContent') || '{}');
+        editableElements.forEach((el) => {
+            const identifier = el.getAttribute('id') || el.innerText;
+            if (savedContent[identifier]) {
+                el.innerText = savedContent[identifier];
+            }
         });
 
-        document.body.classList.add("logged-in"); // Adiciona a classe "logged-in" se o usuário estiver logado
-        
-        iniciarDeslogAutomatico(); // Inicia o temporizador para logout automático
+        document.body.classList.add("logged-in");
+        iniciarDeslogAutomatico();
     } else {
-        // Esconder conteúdo editável se o usuário não estiver logado
         editableElements.forEach((el) => {
-            el.style.pointerEvents = "none"; // Desabilita a edição
+            el.style.pointerEvents = "none";
         });
+    }
+});
+
+// Aviso antes de sair com alterações não salvas
+window.addEventListener('beforeunload', (e) => {
+    if (hasUnsavedChanges) {
+        e.preventDefault();
+        e.returnValue = '';
     }
 });
