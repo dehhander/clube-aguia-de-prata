@@ -1,7 +1,6 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
-import { getAuth } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js";
-import { getFirestore } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js";
-
+import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js";
+import { getFirestore, doc, setDoc } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js"; // Importando Firestore
 
 const firebaseConfig = {
     apiKey: "AIzaSyAvEcFej2F3XRls4PxIei2iCsSPI2YZcEY",
@@ -15,6 +14,7 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
+const db = getFirestore(app); // Inicializando Firestore
 
 // Variáveis para o sistema de salvamento
 const saveButton = document.getElementById('save-changes');
@@ -29,21 +29,29 @@ editableElements.forEach((el) => {
     });
 });
 
-// Função para salvar alterações
-function saveChanges() {
+// Função para salvar alterações no Firestore
+async function saveChanges() {
     const savedContent = {};
     
     editableElements.forEach((el) => {
-        const identifier = el.getAttribute('id') || el.innerText;
+        const identifier = el.getAttribute('data-identifier') || el.innerText; // Use um atributo data-identifier
         savedContent[identifier] = el.innerText;
     });
-    
-    localStorage.setItem('savedContent', JSON.stringify(savedContent));
-    
-    hasUnsavedChanges = false;
-    saveButton.style.display = 'none';
-    
-    alert('Alterações salvas com sucesso!');
+
+    const user = auth.currentUser ; // Obtendo o usuário autenticado
+    if (user) {
+        try {
+            await setDoc(doc(db, "users", user.uid), savedContent); // Salva os dados no Firestore
+            hasUnsavedChanges = false;
+            saveButton.style.display = 'none';
+            alert('Alterações salvas com sucesso!');
+        } catch (error) {
+            console.error("Erro ao salvar alterações: ", error);
+            alert('Erro ao salvar alterações. Tente novamente.');
+        }
+    } else {
+        alert('Você precisa estar logado para salvar as alterações.');
+    }
 }
 
 // Adiciona evento de clique ao botão de salvar
@@ -149,7 +157,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
         
         const savedContent = JSON.parse(localStorage.getItem('savedContent') || '{}');
         editableElements.forEach((el) => {
-            const identifier = el.getAttribute('id') || el.innerText;
+            const identifier = el.getAttribute('data-identifier') || el.innerText;
             if (savedContent[identifier]) {
                 el.innerText = savedContent[identifier];
             }
