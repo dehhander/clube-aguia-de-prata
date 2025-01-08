@@ -191,7 +191,7 @@ section.slider{
 
 .slide-box img{
   width: 100%;
-  height: auto;
+  height: 100%;
 }
 
 .nav-manual, .nav-auto{
@@ -205,6 +205,8 @@ section.slider{
 .nav-manual .manual-btn, .nav-auto div{
   border: 1px solid #ff0054;
   padding: 4px;
+  position: relative;
+  top: -24px;
   border-radius: 50%;
   cursor: pointer;
   transition: 0.2s;
