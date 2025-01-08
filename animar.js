@@ -34,7 +34,7 @@ async function saveChanges() {
     const savedContent = {};
     
     editableElements.forEach((el) => {
-        const identifier = el.getAttribute('data-identifier') || el.innerText; // Use um atributo data-identifier
+        const identifier = el.getAttribute('ID') || el.innerText; // Use um atributo data-identifier
         savedContent[identifier] = el.innerText;
     });
 
