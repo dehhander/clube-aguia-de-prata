@@ -1,140 +1,198 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <script src="https://kit.fontawesome.com/241f61ceb6.js" crossorigin="anonymous"></script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <script type="module" src="animar.js" defer></script>
-    <script src="js/app.js"></script>
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-app.js";
+import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-auth.js";
+import { getFirestore, doc, setDoc } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-firestore.js";
+import { getAnalytics, logEvent } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-analytics.js";
 
-    <script src="js/login.js" defer></script>
-    <title>Águia de Prata</title>
-</head>
-<body>
-    <header>
-        <div class="container">
-            <a href="https://dehhander.github.io/clube-aguia-de-prata/" class="logo"><img src="img/logo.png"></a>
-            <div class="menu">
-                <nav>
-                    <a href="https://dehhander.github.io/clube-aguia-de-prata/historia/">História</a>
-                    <a href="https://dehhander.github.io/clube-aguia-de-prata/agenda/">Agenda</a>
-                    <a href="https://dehhander.github.io/clube-aguia-de-prata/unidades/">Unidades</a>
-                    <a href="https://dehhander.github.io/clube-aguia-de-prata/contato/">Contato</a>
-                </nav>
-            </div>
 
-            <div class="social">
-                <a href="https://www.instagram.com/clubeaguiadeprata/" target="_blank">
-                    <button><i class="fa-brands fa-instagram"></i></button></a>
-                <a href="https://www.facebook.com/clubeaguiadeprata/?locale=pt_BR" target="_blank">
-                    <button><i class="fa-brands fa-facebook"></i></button></a>
-                <a href="https://www.youtube.com/channel/UCgtxBK9ygrPW1dkWYeqOZ4Q" target="_blank">
-                    <button><i class="fa-brands fa-youtube"></i></button></a>
-            </div>
-        </div>
-    </header>
+const firebaseConfig = {
+    apiKey: "AIzaSyCJyMXkZa2zAx6lpICBQM2nPTyPtJ-8UAg",
+    authDomain: "aguia-de-prata-95846.firebaseapp.com",
+    projectId: "aguia-de-prata-95846",
+    storageBucket: "aguia-de-prata-95846.firebasestorage.app",
+    messagingSenderId: "516661578539",
+    appId: "1:516661578539:web:54c0f9a0339e4d6efb936e",
+    measurementId: "G-875GHY6MNE"
+};
 
-    <section class="slider">
-        <div class="slider-content">
-            <input type="radio" name="btn-radio" id="radio1" checked>
-            <input type="radio" name="btn-radio" id="radio2">
-            <input type="radio" name="btn-radio" id="radio3">
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const db = getFirestore(app); // Inicializando Firestore
+const analytics = getAnalytics(app); // Inicializa o Analytics
 
-            <div class="slide-box primeiro">
-                <img class="img-desktop" src="img/slide-1.png" alt="slide 1">
-                <img class="img-mobile" src="img/slide-1-mob.png" alt="slide 1">
-            </div>
 
-            <div class="slide-box">
-                <img class="img-desktop" src="img/slide-2.png" alt="slide 3">
-                <img class="img-mobile" src="img/slide-2-mob.png" alt="slide 1">
-            </div>
 
-            <div class="slide-box">
-                <img class="img-desktop" src="img/slide-3.png" alt="slide 3">
-                <img class="img-mobile" src="img/slide-3-mob.png" alt="slide 3">
-            </div>
+// Variáveis para o sistema de salvamento
+const saveButton = document.getElementById('save-changes');
+const editableElements = document.querySelectorAll('[contenteditable="true"]');
+let hasUnsavedChanges = false;
 
-            <div class="nav-auto">
-                <div class="auto-btn1"></div>
-                <div class="auto-btn2"></div>
-                <div class="auto-btn3"></div>
-            </div>
+// Adiciona evento para cada elemento editável
+editableElements.forEach((el) => {
+    el.addEventListener('input', () => {
+        hasUnsavedChanges = true;
+        saveButton.style.display = 'block';
+    });
+});
 
-            <div class="nav-manual">
-                <label for="radio1" class="manual-btn"></label>
-                <label for="radio2" class="manual-btn"></label>
-                <label for="radio3" class="manual-btn"></label>
-            </div>
-        </div>
-    </section>
-    <hr>
+// Função para salvar alterações no Firestore
+async function saveChanges() {
+    const savedContent = {};
     
-    <div class="body2">
-        <section id="sobre" class="about">
-            <div class="container2">
-                <h2 class="sob" contenteditable="true">Sobre o Clube</h2>
-                <p contenteditable="true" data-identifier="txt1">O Clube Águia de Prata é um espaço dedicado ao lazer, esportes e desenvolvimento pessoal. Com infraestrutura de qualidade, oferecemos atividades para todas as idades.</p>
-                <img src="img/sobre.jpg" alt="Sobre o clube" class="about-image">
-            </div>
-        </section>
+    editableElements.forEach((el) => {
+        const identifier = el.getAttribute('data-identifier') || el.innerText; // Use um atributo data-identifier
+        savedContent[identifier] = el.innerText;
+    });
 
-        <section id="atividades" class="services">
-            <div class="container2">
-                <h2 class="ativ" contenteditable="true">Nossas Atividades</h2>
-                <div class="cards">
-                    <div class="card" contenteditable="true" data-identifier="txt2">
-                        <h3>Mental</h3>
-                        <p>Quadras, campos e muito mais para você se manter ativo.</p>
-                    </div>
-                    <div class="card" contenteditable="true" data-identifier="txt3">
-                        <h3>Físico</h3>
-                        <p>Organizamos eventos sociais e culturais para toda a família.</p>
-                    </div>
-                    <div class="card" contenteditable="true" data-identifier="txt4">
-                        <h3>Espiritual</h3>
-                        <p>Biblía, áreas de descanso e espaços verdes para relaxar.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
 
-        <section id="contato" class="contact">
-            <div class="container2">
-                <h2 contenteditable="true">Fale Conosco</h2>
-                <p contenteditable="true">Entre em contato para saber mais sobre o clube ou agendar uma visita.</p>
-                <a href="mailto:contato@aguia.com.br" class="btn">Envie um E-mail</a>
-            </div>
-        </section>
-    </div>
 
-    <button id="save-changes" class="save-btn" style="display: none;">Salvar Alterações</button>
+    const user = auth.currentUser; // Obtendo o usuário autenticado
+    if (user) {
+        try {
+            await setDoc(doc(db, "users", user.uid), savedContent); // Salva os dados no Firestore
 
-    <button id="login-btn" class="login-btn">admin</button>
-    <div id="login-modal" class="modal">
-        <div class="modal-content"> 
-            <span class="close">&times;</span>
-            <h2>Login</h2>
-            <form id="login-form">
-                <label for="email">E-mail:</label>
-                <input type="email" id="email" placeholder="Digite seu e-mail" required>
-                <label for="password">Senha:</label>
-                <input type="password" id="password" placeholder="Digite sua senha" required>
-                <button type="submit">Entrar</button>
-            </form>
-        </div>
-    </div>
+            
+             // **ALTERAÇÃO**: Salvar no localStorage
+             localStorage.setItem('savedContent', JSON.stringify(savedContent));
 
-    <script src="js/firebase.js"></script>
-    <script src="js/app.js" defer></script> <!-- Importei o app.js aqui -->
-    <script src="js/login.js" defer></script>
+             
+            hasUnsavedChanges = false;
+            saveButton.style.display = 'none';
+            alert('Alterações salvas com sucesso!');
+        } catch (error) {
+            console.error("Erro ao salvar alterações: ", error);
+            alert('Erro ao salvar alterações. Tente novamente.');
+        }
+    } else {
+        alert('Você precisa estar logado para salvar as alterações.');
+    }
+}
 
-    <footer>
-        <div class="container2">
-            <p>&copy; 2025 Clube Águia de Prata - APL - 3ª Região - Jardim Artartica</p>
-        </div>
-    </footer>
+// Adiciona evento de clique ao botão de salvar
+saveButton.addEventListener('click', saveChanges);
+
+// Lógica do Slider
+let cont = 1;
+document.getElementById('radio1').checked = true;
+
+function iniciarSlider() {
+    setInterval(() => {
+        proximaImg();
+    }, 5000);
+}
+
+function proximaImg() {
+    cont++;
+    if (cont > 3) {
+        cont = 1;
+    }
+    document.getElementById('radio' + cont).checked = true;
+}
+
+// Referências aos elementos
+const loginBtn = document.getElementById("login-btn");
+const loginModal = document.getElementById("login-modal");
+const closeModal = document.querySelector(".close");
+const loginForm = document.getElementById("login-form");
+
+// Abrir modal de login
+loginBtn.addEventListener("click", () => {
+    loginModal.style.display = "block";
+});
+
+// Fechar modal
+closeModal.addEventListener("click", () => {
+    loginModal.style.display = "none";
+});
+
+// Fechar modal ao clicar fora
+window.addEventListener("click", (e) => {
+    if (e.target === loginModal) {
+        loginModal.style.display = "none";
+    }
+});
+
+// Processar login
+loginForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+  
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+   
     
-</body>
-</html>
+
+    try {
+        const userCredential = await signInWithEmailAndPassword(auth, email, password);  
+        alert("Login bem-sucedido!");
+        localStorage.setItem("isLoggedIn", "true");
+        loginModal.style.display = "none";
+        
+        editableElements.forEach((el) => {
+            el.style.pointerEvents = "auto";
+        });
+        
+        iniciarDeslogAutomatico();
+    } catch (error) {
+        alert(`Erro: ${error.message}`);
+    }
+});
+
+// Função para deslogar automaticamente
+let timeoutID;
+function iniciarDeslogAutomatico() {
+    const resetTimeout = () => {
+        clearTimeout(timeoutID);
+        timeoutID = setTimeout(() => {
+            alert("Você foi deslogado devido à inatividade.");
+            localStorage.removeItem("isLoggedIn");
+            window.location.reload();
+        }, 1 * 60 * 1000);  // 1 minuto de inatividade
+    };
+
+    document.addEventListener("mousemove", resetTimeout);
+    document.addEventListener("keydown", resetTimeout);
+
+    resetTimeout();
+}
+
+// Login com Enter
+loginForm.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") {
+        e.preventDefault();
+        loginForm.submit();
+    }
+});
+
+// Verificar login ao carregar a página
+window.addEventListener("DOMContentLoaded", () => {
+    if (localStorage.getItem("isLoggedIn") === "true") {
+        editableElements.forEach((el) => {
+            el.style.pointerEvents = "auto";
+        });
+        
+        const savedContent = JSON.parse(localStorage.getItem('savedContent') || '{}');
+        editableElements.forEach((el) => {
+            const identifier = el.getAttribute('data-identifier') || el.innerText;
+            if (savedContent[identifier]) {
+                el.innerText = savedContent[identifier];
+            }
+        });
+
+        document.body.classList.add("logged-in");
+        iniciarDeslogAutomatico();
+    } else {
+        editableElements.forEach((el) => {
+            el.style.pointerEvents = "none";
+        });
+    }
+});
+
+// Aviso antes de sair com alterações não salvas
+window.addEventListener('beforeunload', (e) => {
+    if (hasUnsavedChanges) {
+        e.preventDefault();
+        e.returnValue = '';
+    }
+});
+
+iniciarSlider();
