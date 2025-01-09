@@ -3,13 +3,13 @@ import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/fir
 import { getFirestore, doc, setDoc } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js"; // Importando Firestore
 
 const firebaseConfig = {
-    apiKey: "AIzaSyCWZvlpAgnZRPlZIgcB9t4EQxhBH8lPFeM",
-    authDomain: "aguia-de-prata-89e45.firebaseapp.com",
-    projectId: "aguia-de-prata-89e45",
-    storageBucket: "aguia-de-prata-89e45.firebasestorage.app",
-    messagingSenderId: "472051242050",
-    appId: "1:472051242050:web:5b8ab44141219d496149db",
-    measurementId: "G-2SCT4K8Z5F"
+    apiKey: "AIzaSyCJyMXkZa2zAx6lpICBQM2nPTyPtJ-8UAg",
+    authDomain: "aguia-de-prata-95846.firebaseapp.com",
+    projectId: "aguia-de-prata-95846",
+    storageBucket: "aguia-de-prata-95846.firebasestorage.app",
+    messagingSenderId: "516661578539",
+    appId: "1:516661578539:web:54c0f9a0339e4d6efb936e",
+    measurementId: "G-875GHY6MNE"
   };
 
 const app = initializeApp(firebaseConfig);
