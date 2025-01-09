@@ -1,9 +1,7 @@
-  // Import the functions you need from the SDKs you need
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-app.js";
-  import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-analytics.js";
-  // TODO: Add SDKs for Firebase products that you want to use
-  // https://firebase.google.com/docs/web/setup#available-libraries
-import { getFirestore, doc, setDoc } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-analytics.js"; // Importando Firestore
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-app.js";
+import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-auth.js";
+import { getFirestore, doc, setDoc } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-firestore.js";
 
 const firebaseConfig = {
     apiKey: "AIzaSyCJyMXkZa2zAx6lpICBQM2nPTyPtJ-8UAg",
@@ -13,7 +11,7 @@ const firebaseConfig = {
     messagingSenderId: "516661578539",
     appId: "1:516661578539:web:54c0f9a0339e4d6efb936e",
     measurementId: "G-875GHY6MNE"
-  };
+};
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
@@ -41,7 +39,7 @@ async function saveChanges() {
         savedContent[identifier] = el.innerText;
     });
 
-    const user = auth.currentUser ; // Obtendo o usuário autenticado
+    const user = auth.currentUser; // Obtendo o usuário autenticado
     if (user) {
         try {
             await setDoc(doc(db, "users", user.uid), savedContent); // Salva os dados no Firestore
@@ -61,12 +59,14 @@ async function saveChanges() {
 saveButton.addEventListener('click', saveChanges);
 
 // Lógica do Slider
-var cont = 1;
+let cont = 1;
 document.getElementById('radio1').checked = true;
 
-setInterval(() => {
-    proximaImg();
-}, 5000);
+function iniciarSlider() {
+    setInterval(() => {
+        proximaImg();
+    }, 5000);
+}
 
 function proximaImg() {
     cont++;
@@ -100,29 +100,26 @@ window.addEventListener("click", (e) => {
 });
 
 // Processar login
-loginForm.addEventListener("submit", (e) => {
+loginForm.addEventListener("submit", async (e) => {
     e.preventDefault();
   
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
   
-    signInWithEmailAndPassword(auth, email, password)
-        .then((userCredential) => {
-            alert("Login bem-sucedido!");
-            localStorage.setItem("isLoggedIn", "true");
-            loginModal.style.display = "none";
-            
-            editableElements.forEach((el) => {
-                el.style.pointerEvents = "auto";
-            });
-            
-            iniciarDeslogAutomatico();
-        })
-        .catch((error) => {
-            const errorCode = error.code;
-            const errorMessage = error.message;
-            alert(`Erro: ${errorMessage}`);
+    try {
+        const userCredential = await signInWithEmailAndPassword(auth, email, password);  
+        alert("Login bem-sucedido!");
+        localStorage.setItem("isLoggedIn", "true");
+        loginModal.style.display = "none";
+        
+        editableElements.forEach((el) => {
+            el.style.pointerEvents = "auto";
         });
+        
+        iniciarDeslogAutomatico();
+    } catch (error) {
+        alert(`Erro: ${error.message}`);
+    }
 });
 
 // Função para deslogar automaticamente
@@ -134,7 +131,7 @@ function iniciarDeslogAutomatico() {
             alert("Você foi deslogado devido à inatividade.");
             localStorage.removeItem("isLoggedIn");
             window.location.reload();
-        }, 1 * 60 * 1000);
+        }, 1 * 60 * 1000);  // 1 minuto de inatividade
     };
 
     document.addEventListener("mousemove", resetTimeout);
@@ -152,7 +149,7 @@ loginForm.addEventListener("keydown", (e) => {
 });
 
 // Verificar login ao carregar a página
-window.addEventListener("DOMContentLoaded", (event) => {
+window.addEventListener("DOMContentLoaded", () => {
     if (localStorage.getItem("isLoggedIn") === "true") {
         editableElements.forEach((el) => {
             el.style.pointerEvents = "auto";
@@ -182,3 +179,5 @@ window.addEventListener('beforeunload', (e) => {
         e.returnValue = '';
     }
 });
+
+iniciarSlider();
