@@ -3,7 +3,7 @@
   import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-analytics.js";
   // TODO: Add SDKs for Firebase products that you want to use
   // https://firebase.google.com/docs/web/setup#available-libraries
-import { getFirestore, doc, setDoc } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js"; // Importando Firestore
+import { getFirestore, doc, setDoc } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-analytics.js"; // Importando Firestore
 
 const firebaseConfig = {
     apiKey: "AIzaSyCJyMXkZa2zAx6lpICBQM2nPTyPtJ-8UAg",
