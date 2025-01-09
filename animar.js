@@ -35,14 +35,22 @@ async function saveChanges() {
     const savedContent = {};
     
     editableElements.forEach((el) => {
-        const identifier = el.getAttribute('ID') || el.innerText; // Use um atributo data-identifier
+        const identifier = el.getAttribute('data-identifier') || el.innerText; // Use um atributo data-identifier
         savedContent[identifier] = el.innerText;
     });
+
+
 
     const user = auth.currentUser; // Obtendo o usuário autenticado
     if (user) {
         try {
             await setDoc(doc(db, "users", user.uid), savedContent); // Salva os dados no Firestore
+
+            
+             // **ALTERAÇÃO**: Salvar no localStorage
+             localStorage.setItem('savedContent', JSON.stringify(savedContent));
+
+             
             hasUnsavedChanges = false;
             saveButton.style.display = 'none';
             alert('Alterações salvas com sucesso!');
