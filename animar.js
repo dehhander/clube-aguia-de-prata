@@ -119,7 +119,8 @@ loginForm.addEventListener("submit", async (e) => {
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
    
-    
+    console.log("Status de login:", localStorage.getItem("isLoggedIn"));
+
 
     try {
         const userCredential = await signInWithEmailAndPassword(auth, email, password);  
@@ -138,6 +139,7 @@ loginForm.addEventListener("submit", async (e) => {
 });
 
 // Função para deslogar automaticamente
+
 let timeoutID;
 function iniciarDeslogAutomatico() {
     const resetTimeout = () => {
@@ -196,3 +198,20 @@ window.addEventListener('beforeunload', (e) => {
 });
 
 iniciarSlider();
+
+// Controle do Menu Modal no Mobile
+const hamburger = document.getElementById("hamburger");
+const menuModal = document.getElementById("menu-modal");
+
+hamburger.addEventListener("click", () => {
+    const isOpen = menuModal.classList.contains("open");
+    if (isOpen) {
+        menuModal.classList.remove("open");
+        hamburger.classList.remove("active");
+    } else {
+        menuModal.classList.add("open");
+        hamburger.classList.add("active");
+    }
+});
+
+
