@@ -422,7 +422,7 @@ footer {
 }
 
 
-@media screen and (max-width: 1080px) {
+@media screen and (max-width: 768px) {
   .container {
     display: block; /* Os elementos ficam empilhados */
     text-align: center; /* Centraliza o texto */
