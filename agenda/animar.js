@@ -12,14 +12,13 @@ document.querySelectorAll('.evento').forEach(evento => {
 
 document.addEventListener("DOMContentLoaded", function () {
     const eventos = document.querySelectorAll(".evento"); // Seleciona todos os eventos
-    const hoje = new Date();
-    hoje.setHours(0, 0, 0, 0); // Garante que estamos comparando apenas a data, sem horário
+    const hoje = new Date(); // Obtém a data atual
 
     eventos.forEach(evento => {
         const dataEvento = new Date(evento.getAttribute("data-date")); // Obtém a data do evento
-        
-        if (!isNaN(dataEvento) && dataEvento < hoje) {
-            evento.remove(); // Remove o evento se a data já passou
+
+        if (dataEvento < hoje) {
+            evento.remove(); // Remove o evento se já tiver passado
         }
     });
 });
