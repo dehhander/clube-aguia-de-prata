@@ -172,7 +172,7 @@ section.slider{
 }
 
 .slider-content{
-  width: 100vw;
+  width: 400vw;
   height: auto;
   display: flex;
 }
