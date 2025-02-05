@@ -113,7 +113,7 @@ span{
 
 .about-img{
     display: flex;
-    width: 20%; /* Prporção do tamanho da image */
+    width: 15%; /* Prporção do tamanho da image */
     height: auto;
     position: relative;
     top: 0px;
