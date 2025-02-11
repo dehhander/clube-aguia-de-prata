@@ -6,7 +6,7 @@
 }
 
 .container{
-  max-width: 1920;
+  max-width: 1080;
   margin: 0 auto;
   display: flex;
   align-items: center;
@@ -147,20 +147,14 @@ header{
 
 .login-btn {
   display: absolute;
-  width: 40px;
-  height: 40px;
   font-size: 14px;
   font-weight: bold;
   color: #ffffff;
   padding: 12px 0px;
-  position: relative;
-  top: -1837px;
-  left: 96%;
   background-image: linear-gradient(45deg, #ff2500, #ff7100);
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  margin-right: 50px;
 }
 
 section.slider{
@@ -172,7 +166,7 @@ section.slider{
 }
 
 .slider-content{
-  width: 400vw;
+  width: 400%;
   height: auto;
   display: flex;
 }
@@ -206,7 +200,8 @@ section.slider{
   border: 1px solid #ff0054;
   padding: 4px;
   position: relative;
-  top: -24px;
+  top: -4vw;
+  left: 0;
   border-radius: 50%;
   cursor: pointer;
   transition: 0.2s;
