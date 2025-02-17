@@ -22,7 +22,7 @@ header{
 .logo{
   position: relative;
   top: 0;
-  left: -28%;
+  left: -15%;
   transform: scale(0.9);  /* Reduz a imagem para 50% do tamanho original */
 }
 
