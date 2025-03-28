@@ -21,14 +21,14 @@ header{
 .logo{
   position: relative;
   top: 0;
-  left: -28%;
+  left: -39.4%;
   transform: scale(0.9);
 }
 
 .social{
   position: relative;
   top: 0;
-  left: 15%;
+  left: 39.4%;
 }
 
 .social button{
@@ -80,6 +80,8 @@ header{
   color: #ddd;
   text-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
+
+
 
 .modal {
   display: none;
@@ -144,6 +146,7 @@ header{
   border-radius: 5px;
   cursor: pointer;
 }
+
 
 .login-btn {
   display: absolute;
