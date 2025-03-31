@@ -163,7 +163,7 @@ loginForm.addEventListener("keydown", (e) => {
         e.preventDefault();
         loginForm.submit();
     }
-}); */
+}); 
 
 // Verificar login ao carregar a página
 window.addEventListener("DOMContentLoaded", () => {
@@ -195,7 +195,7 @@ window.addEventListener('beforeunload', (e) => {
         e.preventDefault();
         e.returnValue = '';
     }
-});
+}); */
 
 iniciarSlider();
 
