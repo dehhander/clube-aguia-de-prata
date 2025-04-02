@@ -160,7 +160,7 @@ header{
   cursor: pointer;
 }
 
-section.slider{
+section.slider {
   margin: 0 auto;
   width: 100%;
   height: auto;
@@ -168,17 +168,18 @@ section.slider{
   overflow: hidden;
 }
 
-.slider-content{
+.slider-content {
   width: 400%;
   height: auto;
   display: flex;
+  overflow: visible; /* Garante que as bolinhas não fiquem escondidas */
 }
 
-.slider-content input, .img-mobile{
+.slider-content input, .img-mobile {
   display: none;
 }
 
-.slide-box{
+.slide-box {
   width: 25%;
   height: 300px;
   position: relative;
@@ -186,52 +187,99 @@ section.slider{
   transition: 1s;
 }
 
-.slide-box img{
+.slide-box img {
   width: 100%;
   height: 100%;
 }
 
-.nav-manual, .nav-auto{
+/* Posiciona as bolinhas abaixo do slide */
+.nav-manual {
   position: absolute;
-  width: 100%;
-  margin-top: 24.5%;
+  top: 390px;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
   justify-content: center;
+  gap: 10px;
+  z-index: 99999; /* Aumenta para garantir que fiquem acima */
+  background: rgba(255, 255, 255, 0.5); /* Teste uma cor de fundo temporária para visualizar */
+  padding: 5px; /* Teste um pequeno espaçamento para ajudar na visualização */
+  border-radius: 10px; /* Bordas arredondadas para melhor aparência */
 }
 
-.nav-manual .manual-btn, .nav-auto div{
+.nav-auto {
+  position: absolute;
+  top: 390px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  z-index: 99999; /* Aumenta para garantir que fiquem acima */
+  background: rgba(255, 255, 255, 0.5); /* Teste uma cor de fundo temporária para visualizar */
+  padding: 5px; /* Teste um pequeno espaçamento para ajudar na visualização */
+  border-radius: 10px; /* Bordas arredondadas para melhor aparência */
+}
+
+.nav-container {
+  bottom: 0px; /* Ajuste fino */
+  left: 50%;
+}
+
+.manual-btn {
   border: 1px solid #ff0054;
   padding: 4px;
-  position: relative;
-  top: -4vw;
-  left: 0;
   border-radius: 50%;
   cursor: pointer;
   transition: 0.2s;
+  width: 10px;
+  height: 10px;
+  background-color: transparent;
 }
 
-.nav-manual .manual-btn:not(:last-child), .nav-auto div:not(:last-child){
-  margin-right: 10px;
+/* Estilo dos botões */
+.manual-btn, .nav-auto div {
+  border: 1.5px solid #ff2500;
+  padding: 4px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.2s;
+  width: 10px;
+  height: 10px;
+  background-color: transparent;
 }
 
-.nav-manual .manual-btn:hover{
-  background-color: #ff0054;
+.nav-manual .manual-btn:hover {
+  background-image: linear-gradient(45deg, #ff2500, #ff2500);
 }
 
-#radio1:checked ~ .nav-auto .auto-btn1, #radio2:checked ~ .nav-auto .auto-btn2, #radio3:checked ~ .nav-auto .auto-btn3{
-  background-color: #ff0054;
+/* Lógica de ativação das bolinhas automáticas */
+#radio1:checked ~ .nav-auto .auto-btn1,
+#radio2:checked ~ .nav-auto .auto-btn2,
+#radio3:checked ~ .nav-auto .auto-btn3 {
+  background-image: linear-gradient(45deg, #ff2500, #ff2500);
 }
 
-#radio1:checked ~ .primeiro{
+/* Transição dos slides */
+#radio1:checked ~ .slider-content .primeiro {
   margin-left: 0%;
 }
 
-#radio2:checked ~ .primeiro{
+#radio2:checked ~ .slider-content .primeiro {
   margin-left: -25%;
 }
 
-#radio3:checked ~ .primeiro{
+#radio3:checked ~ .slider-content .primeiro {
   margin-left: -50%;
+}
+
+/* Modifique para aplicar à segunda e terceira imagens também */
+#radio2:checked ~ .slider-content .slide-box:nth-child(2) {
+  margin-left: 0%;
+}
+
+#radio3:checked ~ .slider-content .slide-box:nth-child(3) {
+  margin-left: -25%;
 }
 
 .body2, h1, p, ul, li, a, img {
