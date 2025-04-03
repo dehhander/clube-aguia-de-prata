@@ -172,7 +172,7 @@ section.slider {
   width: 400%;
   height: auto;
   display: flex;
-  transition: transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out; /* Transição suave */
 }
 
 .slider-content input, .img-mobile {
