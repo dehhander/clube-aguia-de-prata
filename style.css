@@ -172,7 +172,7 @@ section.slider {
   width: 400%;
   height: auto;
   display: flex;
-  overflow: visible; /* Garante que as bolinhas não fiquem escondidas */
+  transition: transform 0.5s ease-in-out;
 }
 
 .slider-content input, .img-mobile {
@@ -180,7 +180,7 @@ section.slider {
 }
 
 .slide-box {
-  width: 25%;
+  width: 25.2%;
   height: 300px;
   position: relative;
   text-align: center;
