@@ -157,13 +157,13 @@ function iniciarDeslogAutomatico() {
     resetTimeout();
 }
 
-/* // Login com Enter
+// Login com Enter
 loginForm.addEventListener("keydown", (e) => {
     if (e.key === "Enter") {
         e.preventDefault();
         loginForm.submit();
     }
-}); 
+});
 
 // Verificar login ao carregar a página
 window.addEventListener("DOMContentLoaded", () => {
@@ -195,7 +195,7 @@ window.addEventListener('beforeunload', (e) => {
         e.preventDefault();
         e.returnValue = '';
     }
-}); */
+});
 
 iniciarSlider();
 
