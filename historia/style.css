@@ -1,203 +1,160 @@
-
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Crimson text", serif;
-    flex-wrap: wrap; /* Permite que os itens se ajustem conforme o tamanho da tela */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Crimson Text", serif;
 }
 
-
-.container{
-    max-width: 2000px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap; /* Permite que os itens se ajustem conforme o tamanho da tela */
+header {
+  background-color: black;
+  width: 100%;
 }
 
-header{
-    background-color: black;
-    width: 100%;
-    flex-wrap: wrap; /* Permite que os itens se ajustem conforme o tamanho da tela */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
 }
 
-.logo{
+.logo img {
+  width: 120px;
+}
+
+.menu {
+  display: flex;
+  gap: 20px;
+}
+
+.menu a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
   position: relative;
-  top: 0;
-  left: -39.4%;
-  transform: scale(0.9);  /* Reduz a imagem para 50% do tamanho original */
 }
 
-.social{
-    position: relative;
-    top: 0;
-    left: 39.4%;
-}
-
-.social button{
-    width: 40px;
-    height: 40px;
-    background-image: linear-gradient(45deg, #ff2500, #ff7100);
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    margin-right: 10px;
-}
-
-.social button i{
-    font-size: 20px;
-    color: #ffffff;
-}
-
-.menu{
-    position: relative;
-    top: 0;
-    left: 0%;
-    text-align: center;
-}
-
-.menu nav a{
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 19px;
-    position: relative;
-    padding: 20px;
-}
-
-.menu nav a::after{
-  content: " "; /* Para aparecer a animação */
-  width: 0%;
-  height: 4px; /* Largura da animação */
-  background-image: linear-gradient(45deg, #ff2500, #ff7100);
+.menu a::after {
+  content: "";
+  width: 0;
+  height: 3px;
+  background: linear-gradient(45deg, #ff2500, #ff7100);
   position: absolute;
-  top: 50px;
-  left: 20px;
-  transition: 0.10s ease-in-out;
+  bottom: -5px;
+  left: 0;
+  transition: 0.3s;
 }
 
-.menu nav a:hover::after{
-  width: 60px; /* Comprimento da animação */
+.menu a:hover::after {
+  width: 100%;
 }
 
-.menu nav a:hover{
-  color: #ddd; /* Altera a cor do texto ao passar o mouse */
-  text-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Adiciona a sombra ao texto */
+.social {
+  display: flex;
+  gap: 15px;
 }
 
-
- /* Linha */
- hr{
-    border: none;
-    height: 1px;
-    background: linear-gradient(to right, #adbdf0, #ece8e8, #adbdf0); /* Gradiente */
-    margin: 20px 5%;
-    position: relative;
-    top: -8px;
-  }
-
-  .services {
-    text-align:left;
-    padding: 15px 15px; /* Espaçamento e Altura */
-    background: #f4f4f4;
-  }
-
-  .services .cards {
-    display: flex;
-    gap: 0px;
-    justify-content: center;
-  }
-  
-  .services .card {
-    background: #fff;
-    padding: 50px;
-    border-radius: 10px;
-    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
-    width: 100%;
-  }
-
-
-
-   /* Nossa História */
-   .tittle{
-  font-size: 30px;
-  margin: 25px 5%;
+.social i {
+  color: white;
+  font-size: 22px;
+  transition: 0.3s;
 }
 
-span{
-    width: 70%;
-    margin: 30px;
-    display: inline-block;
-    position: relative;
-    top: 10px;
-    left: 2.5%;
-    text-align: justify;   /* Alinha o texto nos dois lados */
-    font-size: 18px; /* Ajuste de tamanho da fonte */
-    line-height: 1.2; /* Espaçamento entre linhas para melhor legibilidade */
-  }
+.social i:hover {
+  color: #ff7100;
+}
 
-.about-img{
-    width: 120px;
-    height: auto;
-    position:absolute;
-    top: 17.5%;
-    left: 74%;    
-}        
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
 
-/* Fim */
+.hamburger div {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+}
 
-  .logo2 {
-    width: 400px;
-    height: auto;
-    position: absolute;
-    top: 75.5%;
-    left: 75%;  
-  }
-
-
-  .nosso-logo{
-    font-size: 30px;
-    margin: 25px 5%;
-  }
-
-  /* Linha */
-  .hr2{
-    border: none;
-    height: 1px;
-    background: linear-gradient(to right, #adbdf0, #ece8e8, #adbdf0); /* Gradiente */
-    margin: 20px 5%;
-    position: relative;
-    top: -11px;
-  }
-
-  .grito{
-    font-size: 30px;
-    margin: 25px 5%;
-  }
-
-   /* Linha */
-   .hr3{
-    border: none;
-    height: 1px;
-    background: linear-gradient(to right, #adbdf0, #ece8e8, #adbdf0); /* Gradiente */
-    margin: 20px 5%;
-    position: relative;
-    top: -11px;
-  }
-
-  
-  /* Rodapé */
-  footer {
-    background: #000;
-    color: #fff;
-    text-align: center;
-    padding: 10px 0;
-    font-size: 0.9rem;
-  }
-
-  /* Esconder menu modal e botão de hambúrguer em desktops */
-.hamburger,
 .menu-modal {
-    display: none;
+  display: none;
+  background-color: black;
+  position: absolute;
+  top: 60px;
+  width: 100%;
+  text-align: center;
+  padding: 20px 0;
 }
+
+.menu-modal.active {
+  display: block;
+}
+
+.menu-modal nav a {
+  display: block;
+  padding: 10px 0;
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.about, .services {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.title {
+  font-size: 30px;
+  margin-bottom: 15px;
+}
+
+.services .card {
+  background-color: #f4f4f4;
+  padding: 30px;
+  border-radius: 10px;
+  margin: 20px auto;
+  max-width: 800px;
+  text-align: justify;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.about-img img, .logo2 img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 20px auto;
+}
+
+footer {
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+  font-size: 0.9rem;
+}
+
+hr {
+  border: none;
+  height: 1px;
+  background: linear-gradient(to right, #adbdf0, #ece8e8, #adbdf0);
+  margin: 20px auto;
+  width: 90%;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .menu {
+      display: none;
+  }
+
+  .hamburger {
+      display: flex;
+  }
+
+  .social {
+      display: none;
+  }
+}
+
