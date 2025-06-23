@@ -24,59 +24,72 @@ header {
 }
 
 .menu {
-  display: flex;
-  gap: 50px;
+    display: flex;
+    gap: 50px; /* Se quiser pode deixar 40px como estava */
 }
 
 .menu a {
-  color: white;
-  text-decoration: none;
-  font-size: 19px;
-  position: relative;
+    color: white;
+    text-decoration: none;
+    font-size: 19px;
+    position: relative;
 }
 
-.menu a::after {
-  content: "";
-  width: 0;
-  height: 3px;
-  background: linear-gradient(45deg, #ff2500, #ff7100);
-  position: absolute;
-  bottom: -5px;
-  left: 0;
-  transition: 0.3s;
+
+/* Aplicando display flex e gap no nav dentro da div .menu */
+.menu nav {
+    display: flex;
+    gap: 50px;
 }
 
-.menu a:hover::after {
-  width: 100%;
+.menu nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 19px;
+    position: relative;
+}
+
+.menu nav a::after {
+    content: "";
+    width: 0;
+    height: 3px;
+    background: linear-gradient(45deg, #ff2500, #ff7100);
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    transition: 0.3s;
+}
+
+.menu nav a:hover::after {
+    width: 100%;
 }
 
 .social {
-  display: flex;
-  gap: 15px;
+    display: flex;
+    gap: 15px;
 }
 
-.social a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 40px;
-  height: 40px;
-  background-image: linear-gradient(45deg, #ff2500, #ff7100);
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  margin-right: 10px;
-  text-decoration: none;
+.social a, .social button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background-image: linear-gradient(45deg, #ff2500, #ff7100);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    text-decoration: none;
 }
 
-.social a i {
-  color: white;
-  font-size: 20px;
-  transition: 0.3s;
+.social a i, .social button i {
+    color: white;
+    font-size: 20px;
+    transition: 0.3s;
 }
 
-.social i:hover {
-  color: #ff7100;
+.social a:hover i, .social button:hover i {
+    color: #ff7100;
 }
 
 .hamburger {
