@@ -1,85 +1,92 @@
-
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Crimson text", serif;
+    font-family: "Crimson Text", serif;
 }
 
-.container{
-    max-width: 1080;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-header{
+header {
     background-color: black;
     width: 100%;
 }
 
-.logo{
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 10px;
     position: relative;
-    top: 0;
-    left: -15%;
-    transform: scale(0.9);  /* Reduz a imagem para 50% do tamanho original */
 }
 
-.social{
-    position: relative;
-    top: 0;
-    left: 15%;
+.logo img {
+    width: 120px;
 }
 
-.social button{
+.menu {
+    display: flex;
+    gap: 50px;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 19px;
+    position: relative;
+}
+
+.menu a::after {
+    content: "";
+    width: 0;
+    height: 3px;
+    background: linear-gradient(45deg, #ff2500, #ff7100);
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    transition: 0.3s;
+}
+
+.menu a:hover::after {
+    width: 100%;
+}
+
+.social {
+    display: flex;
+    gap: 15px;
+}
+
+.social a, .social button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 40px;
     height: 40px;
     background-image: linear-gradient(45deg, #ff2500, #ff7100);
     border: none;
     border-radius: 8px;
     cursor: pointer;
-    margin-right: 10px;
-}
-
-.social button i{
-    font-size: 20px;
-    color: #ffffff;
-}
-
-.menu{
-    position: relative;
-    top: 0;
-    left: 0%;
-    text-align: center;
-}
-
-.menu nav a{
-    color: #ffffff;
     text-decoration: none;
-    font-size: 19px;
-    position: relative;
-    padding: 20px;
 }
 
-.menu nav a::after{
-  content: " "; /* Para aparecer a animação */
-  width: 0%;
-  height: 4px; /* Largura da animação */
-  background-image: linear-gradient(45deg, #ff2500, #ff7100);
-  position: absolute;
-  top: 50px;
-  left: 20px;
-  transition: 0.10s ease-in-out;
+.social a i, .social button i {
+    color: white;
+    font-size: 20px;
+    transition: 0.3s;
 }
 
-.menu nav a:hover::after{
-  width: 60px; /* Comprimento da animação */
+.social a:hover i, .social button:hover i {
+    color: #ff7100;
 }
 
-.menu nav a:hover{
-  color: #ddd; /* Altera a cor do texto ao passar o mouse */
-  text-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Adiciona a sombra ao texto */
+/* Botão menu mobile */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
 }
 
   /* Página de contatos */
@@ -174,3 +181,31 @@ iframe {
     padding: 10px 0;
     font-size: 0.9rem;
   }
+
+  /* RESPONSIVO */
+@media (max-width: 768px) {
+    .menu {
+        position: absolute;
+        top: 70px;
+        right: 10px;
+        background-color: black;
+        flex-direction: column;
+        width: 200px;
+        gap: 20px;
+        padding: 20px;
+        border-radius: 10px;
+        display: none;
+    }
+
+    .menu.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .social {
+        display: none; /* Opcional: pode esconder os ícones no mobile ou manter */
+    }
+}
