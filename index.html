@@ -1,62 +1,47 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-    <head>
-     <script src="https://kit.fontawesome.com/241f61ceb6.js" crossorigin="anonymous"></script>
-     <meta charset="UTF-8">
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <link rel="stylesheet" href="style.css">
-     <script type="module" src="animar.js" defer></script>
 
-     <title>Águia de Prata</title>
-    </head>
-    <body>
-        <header>
-            <div class="container">
+<head>
+    <script src="https://kit.fontawesome.com/241f61ceb6.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="animar.js" defer></script>
+    <title>Águia de Prata</title>
+</head>
 
-
-                <div class="container">
-                 <!-- Botão de Hambúrguer (visível apenas em dispositivos móveis) -->
-                 <div class="hamburger" id="hamburger">
-                    <div></div>
-                    <div></div>
-                <div></div>
-            </div>
-
+<body>
+    <header>
+        <div class="container">
             <!-- Logo -->
-            <a href="https://dehhander.github.io/clube-aguia-de-prata/" class="logo"><img src="img/logo.png"></a>
-            <div class="menu">
-                <nav>
-                    <a href="https://dehhander.github.io/clube-aguia-de-prata/historia/">História</a>
-                    <a href="https://dehhander.github.io/clube-aguia-de-prata/agenda/">Agenda</a>
-                    <a href="https://dehhander.github.io/clube-aguia-de-prata/unidades/">Unidades</a>
-                    <a href="https://adehhander.github.io/clube-aguia-de-prata/contato/">Contato</a>
-                </nav>
-            </div>
+            <a href="https://dehhander.github.io/clube-aguia-de-prata/" class="logo">
+                <img src="img/logo.png" alt="Logo">
+            </a>
 
-            <!-- Menu Modal (invisível por padrão) -->
-         <div class="menu-modal" id="menu-modal">
-         <div class="menu-content">
-         <nav>
-            <a href="https://andexar-tech.github.io/clube-aguia-de-prata/historia/">História</a>
-            <a href="https://andexar-tech.github.io/clube-aguia-de-prata/agenda/">Agenda</a>
-            <a href="https://andexar-tech.github.io/clube-aguia-de-prata/unidades/">Unidades</a>
-            <a href="https://andexar-tech.github.io/clube-aguia-de-prata/contato/">Contato</a>
-         </nav>
-           </div>
-          </div>
+            <!-- Menu de navegação -->
+            <nav class="menu" id="menu">
+                <a href="https://dehhander.github.io/clube-aguia-de-prata/historia/">História</a>
+                <a href="https://dehhander.github.io/clube-aguia-de-prata/agenda/">Agenda</a>
+                <a href="https://dehhander.github.io/clube-aguia-de-prata/unidades/">Unidades</a>
+                <a href="https://dehhander.github.io/clube-aguia-de-prata/contato/">Contato</a>
+            </nav>
 
-            <!-- Links Sociais -->
+            <!-- Ícones sociais -->
             <div class="social">
-                <a href="https://www.instagram.com/clubeaguiadeprata/" target="_blank">
-                    <button><i class="fa-brands fa-instagram"></i></button></a>
-                <a href="https://www.facebook.com/clubeaguiadeprata/?locale=pt_BR" target="_blank">
-                    <button><i class="fa-brands fa-facebook"></i></button></a>
-                <a href="https://www.youtube.com/channel/UCgtxBK9ygrPW1dkWYeqOZ4Q" target="_blank">
-                    <button><i class="fa-brands fa-youtube"></i></button></a>
-                   <!-- <button id="login-btn" class="login-btn">admin</button> -->
+                <a href="https://www.instagram.com/clubeaguiadeprata/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.facebook.com/clubeaguiadeprata/?locale=pt_BR" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                <a href="https://www.youtube.com/channel/UCgtxBK9ygrPW1dkWYeqOZ4Q" target="_blank"><i class="fa-brands fa-youtube"></i></a>
             </div>
-         </div>
-        </header>
+
+            <!-- Botão Menu Mobile -->
+            <button class="menu-toggle" id="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- (restante do seu código permanece o mesmo, inclusive o slider e conteúdo) -->
+
 
         <section class="slider">
             <div class="slider-content">
@@ -89,6 +74,8 @@
               <label for="radio3" class="manual-btn"></label>
             </div>
           </div>
+
+          
         
      <hr>
     
@@ -129,28 +116,7 @@
                 </div>
             </section>
         </div>
-
-                        <button id="save-changes" class="save-btn" style="display: none;">Salvar Alterações</button>
-
-   
-            <div id="login-modal" class="modal">
-                <div class="modal-content"> 
-                 <span class="close">&times;</span>
-                 <h2>Login</h2>
-                    <form id="login-form">
-                     <label for="email">E-mail:</label>
-                     <input type="email" id="email" placeholder="Digite seu e-mail" required>
-                     <label for="password">Senha:</label>
-                     <input type="password" id="password" placeholder="Digite sua senha" required>
-                     <button type="submit">Entrar</button>
-                    </form>
-                </div>
-            </div>
-
-            <script src="js/firebase.js"></script>
-            <script src="js/app.js" defer></script> <!-- Importei o app.js aqui -->
-            <script src="js/login.js" defer></script>
-
+            
         <footer>
             <div class="container2">
              <p>&copy; 2025 Clube Águia de Prata - APL - 3ª Região - Jardim Artartica</p>
