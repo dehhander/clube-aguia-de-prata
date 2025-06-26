@@ -111,7 +111,7 @@ header {
 .logo-container {
     display: flex;
     justify-content: center;
-    gap: 30px;
+    gap: 0px;
     margin-top: 40px;
 }
 
