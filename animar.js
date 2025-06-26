@@ -32,3 +32,13 @@ manualBtns.forEach((btn, index) => {
 
 // Inicia o slider automático
 iniciarSlider();
+
+
+// menu hamburguer
+const menuToggle = document.getElementById('menu-toggle');
+const menu = document.getElementById('menu');
+
+menuToggle.addEventListener('click', () => {
+    menu.classList.toggle('active');
+});
+
