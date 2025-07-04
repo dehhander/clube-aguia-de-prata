@@ -387,6 +387,10 @@ footer {
         display: block;
     }
 
+    .social {
+        display: none;
+    }
+
     /* Cards responsivos */
     .services .cards {
         flex-direction: column;
@@ -406,19 +410,21 @@ footer {
 
     .slide-box {
         width: 100vw; /* Cada slide ocupa 100% da tela */
-        height: 250px; /* Altura fixa no celular para não encolher */
+        height: 97px; /* Altura fixa no celular para não encolher */
     }
 
     .slide-box img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover; /* Preenche o slide sem distorcer */
-    }
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+}
+
 
     /* Ajusta posição das bolinhas no celular */
     .nav-manual, .nav-auto {
       position: absolute;
-      top: 337px; /* mais próximo do slide menor */
+      top: 180px; /* mais próximo do slide menor */
       left: 50%;
       transform: translateX(-50%);
       gap: 8px;
