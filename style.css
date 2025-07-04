@@ -410,7 +410,7 @@ footer {
 
     .slide-box {
         width: 100vw; /* Cada slide ocupa 100% da tela */
-        height: 97px; /* Altura fixa no celular para não encolher */
+        height: 90px; /* Altura fixa no celular para não encolher */
     }
 
     .slide-box img {
@@ -424,7 +424,7 @@ footer {
     /* Ajusta posição das bolinhas no celular */
     .nav-manual, .nav-auto {
       position: absolute;
-      top: 180px; /* mais próximo do slide menor */
+      top: 175px; /* mais próximo do slide menor */
       left: 50%;
       transform: translateX(-50%);
       gap: 8px;
