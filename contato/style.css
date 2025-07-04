@@ -205,7 +205,4 @@ iframe {
         display: block;
     }
 
-    .social {
-        display: none; /* Opcional: pode esconder os ícones no mobile ou manter */
-    }
 }
