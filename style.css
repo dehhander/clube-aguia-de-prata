@@ -385,6 +385,8 @@ footer {
 
     .menu-toggle {
         display: block;
+        position: relative;
+        z-index: 9999; /* valor bem alto */
     }
 
     /* Cards responsivos */
