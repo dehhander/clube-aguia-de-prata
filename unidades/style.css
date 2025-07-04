@@ -205,4 +205,13 @@ footer {
     .social {
         display: none; /* Opcional: pode esconder os ícones no mobile ou manter */
     }
+
+    .content-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .content-container > div {
+        width: 90%;
+    }
 }
