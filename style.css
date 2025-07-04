@@ -387,10 +387,6 @@ footer {
         display: block;
     }
 
-    .social {
-        display: none;
-    }
-
     /* Cards responsivos */
     .services .cards {
         flex-direction: column;
