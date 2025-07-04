@@ -1,38 +1,211 @@
 document.addEventListener('DOMContentLoaded', () => {
   const agendaDiv = document.querySelector('.agenda');
   const hoje = new Date();
-  const inicio = new Date(2025, 5, 1); // 1 Junho 2025
-  const fim = new Date(2025, 11, 31); // 31 Dezembro 2025
 
-  // Função para gerar sábados e domingos por mês
-  function gerarFinaisSemanaPorMes(inicio, fim) {
-    const datasPorMes = {};
-    let data = new Date(inicio);
-    while (data <= fim) {
-      if (data.getDay() === 6 || data.getDay() === 0) {
-        const anoMes = `${data.getFullYear()}-${String(data.getMonth() + 1).padStart(2, '0')}`;
-        if (!datasPorMes[anoMes]) {
-          datasPorMes[anoMes] = [];
-        }
-        datasPorMes[anoMes].push(new Date(data));
-      }
-      data.setDate(data.getDate() + 1);
-    }
-    return datasPorMes;
-  }
+  // 🔧 Aqui você edita os eventos: data: [ {titulo, local, horario}, ... ]
+  const eventosEspecificos = {
+  "2025-06-01": [
+    { titulo: "Título do Evento", local: "Local", horario: "Horário" }
+  ],
+  "2025-06-07": [
+    { titulo: "Título do Evento", local: "Local", horario: "Horário" }
+  ],
+  "2025-06-08": [
+    { titulo: "Título do Evento", local: "Local", horario: "Horário" }
+  ],
+  "2025-06-14": [
+    { titulo: "Título do Evento", local: "Local", horario: "Horário" }
+  ],
+  "2025-06-15": [
+    { titulo: "Título do Evento", local: "Local", horario: "Horário" }
+  ],
+  "2025-06-21": [
+    { titulo: "Título do Evento", local: "Local", horario: "Horário" }
+  ],
+  "2025-06-22": [
+    { titulo: "Título do Evento", local: "Local", horario: "Horário" }
+  ],
+  "2025-06-28": [
+    { titulo: "Título do Evento", local: "Local", horario: "Horário" }
+  ],
+  "2025-06-29": [
+    { titulo: "Título do Evento", local: "Local", horario: "Horário" }
+  ],
+  "2025-07-05": [
+    { titulo: "Título do Evento", local: "Local", horario: "Horário" }
+  ],
+  "2025-07-06": [
+    { titulo: "Título do Evento", local: "Local", horario: "Horário" }
+  ],
+  "2025-07-12": [
+    { titulo: "Título do Evento", local: "Local", horario: "Horário" }
+  ],
+  "2025-07-13": [
+    { titulo: "Título do Evento", local: "Local", horario: "Horário" }
+  ],
+  "2025-07-19": [
+    { titulo: "Título do Evento", local: "Local", horario: "Horário" }
+  ],
+  "2025-07-20": [
+    { titulo: "Título do Evento", local: "Local", horario: "Horário" }
+  ],
+  "2025-07-26": [
+    { titulo: "Título do Evento", local: "Local", horario: "Horário" }
+  ],
+  "2025-07-27": [
+    { titulo: "Título do Evento", local: "Local", horario: "Horário" }
+  ],
+  "2025-08-02": [
+    { titulo: "Título do Evento", local: "Local", horario: "Horário" }
+  ],
+  "2025-08-03": [
+    { titulo: "Título do Evento", local: "Local", horario: "Horário" }
+  ],
+  "2025-08-09": [
+    { titulo: "Título do Evento", local: "Local", horario: "Horário" }
+  ],
+  "2025-08-10": [
+    { titulo: "Título do Evento", local: "Local", horario: "Horário" }
+  ],
+  "2025-08-16": [
+    { titulo: "Título do Evento", local: "Local", horario: "Horário" }
+  ],
+  "2025-08-17": [
+    { titulo: "Título do Evento", local: "Local", horario: "Horário" }
+  ],
+  "2025-08-23": [
+    { titulo: "Título do Evento", local: "Local", horario: "Horário" }
+  ],
+  "2025-08-24": [
+    { titulo: "Título do Evento", local: "Local", horario: "Horário" }
+  ],
+  "2025-08-30": [
+    { titulo: "Título do Evento", local: "Local", horario: "Horário" }
+  ],
+  "2025-08-31": [
+    { titulo: "Título do Evento", local: "Local", horario: "Horário" }
+  ],
+  "2025-09-06": [
+    { titulo: "Título do Evento", local: "Local", horario: "Horário" }
+  ],
+  "2025-09-07": [
+    { titulo: "Título do Evento", local: "Local", horario: "Horário" }
+  ],
+  "2025-09-13": [
+    { titulo: "Título do Evento", local: "Local", horario: "Horário" }
+  ],
+  "2025-09-14": [
+    { titulo: "Título do Evento", local: "Local", horario: "Horário" }
+  ],
+  "2025-09-20": [
+    { titulo: "Título do Evento", local: "Local", horario: "Horário" }
+  ],
+  "2025-09-21": [
+    { titulo: "Título do Evento", local: "Local", horario: "Horário" }
+  ],
+  "2025-09-27": [
+    { titulo: "Título do Evento", local: "Local", horario: "Horário" }
+  ],
+  "2025-09-28": [
+    { titulo: "Título do Evento", local: "Local", horario: "Horário" }
+  ],
+  "2025-10-04": [
+    { titulo: "Título do Evento", local: "Local", horario: "Horário" }
+  ],
+  "2025-10-05": [
+    { titulo: "Título do Evento", local: "Local", horario: "Horário" }
+  ],
+  "2025-10-11": [
+    { titulo: "Título do Evento", local: "Local", horario: "Horário" }
+  ],
+  "2025-10-12": [
+    { titulo: "Título do Evento", local: "Local", horario: "Horário" }
+  ],
+  "2025-10-18": [
+    { titulo: "Título do Evento", local: "Local", horario: "Horário" }
+  ],
+  "2025-10-19": [
+    { titulo: "Título do Evento", local: "Local", horario: "Horário" }
+  ],
+  "2025-10-25": [
+    { titulo: "Título do Evento", local: "Local", horario: "Horário" }
+  ],
+  "2025-10-26": [
+    { titulo: "Título do Evento", local: "Local", horario: "Horário" }
+  ],
+  "2025-11-01": [
+    { titulo: "Título do Evento", local: "Local", horario: "Horário" }
+  ],
+  "2025-11-02": [
+    { titulo: "Título do Evento", local: "Local", horario: "Horário" }
+  ],
+  "2025-11-08": [
+    { titulo: "Título do Evento", local: "Local", horario: "Horário" }
+  ],
+  "2025-11-09": [
+    { titulo: "Título do Evento", local: "Local", horario: "Horário" }
+  ],
+  "2025-11-15": [
+    { titulo: "Título do Evento", local: "Local", horario: "Horário" }
+  ],
+  "2025-11-16": [
+    { titulo: "Título do Evento", local: "Local", horario: "Horário" }
+  ],
+  "2025-11-22": [
+    { titulo: "Título do Evento", local: "Local", horario: "Horário" }
+  ],
+  "2025-11-23": [
+    { titulo: "Título do Evento", local: "Local", horario: "Horário" }
+  ],
+  "2025-11-29": [
+    { titulo: "Título do Evento", local: "Local", horario: "Horário" }
+  ],
+  "2025-11-30": [
+    { titulo: "Título do Evento", local: "Local", horario: "Horário" }
+  ],
+  "2025-12-06": [
+    { titulo: "Título do Evento", local: "Local", horario: "Horário" }
+  ],
+  "2025-12-07": [
+    { titulo: "Título do Evento", local: "Local", horario: "Horário" }
+  ],
+  "2025-12-13": [
+    { titulo: "Título do Evento", local: "Local", horario: "Horário" }
+  ],
+  "2025-12-14": [
+    { titulo: "Título do Evento", local: "Local", horario: "Horário" }
+  ],
+  "2025-12-20": [
+    { titulo: "Título do Evento", local: "Local", horario: "Horário" }
+  ],
+  "2025-12-21": [
+    { titulo: "Título do Evento", local: "Local", horario: "Horário" }
+  ],
+  "2025-12-27": [
+    { titulo: "Título do Evento", local: "Local", horario: "Horário" }
+  ],
+  "2025-12-28": [
+    { titulo: "Título do Evento", local: "Local", horario: "Horário" }
+  ]
+};
 
-  // Tipos de eventos de exemplo, pode alterar depois
-  const tiposEventos = [
-    { titulo: "Evento de Sábado", local: "Local A", horario: "10:00 - 12:00" },
-    { titulo: "Evento de Domingo", local: "Local B", horario: "14:00 - 16:00" }
-  ];
-
-  const datasPorMes = gerarFinaisSemanaPorMes(inicio, fim);
+  // Obter e ordenar as datas futuras
+  const datasEventos = Object.keys(eventosEspecificos)
+    .map(dataStr => new Date(dataStr))
+    .filter(data => data >= hoje)
+    .sort((a, b) => a - b);
 
   agendaDiv.innerHTML = '';
 
-  // Construindo agenda por mês
-  Object.keys(datasPorMes).sort().forEach((anoMes) => {
+  // Agrupar eventos por mês
+  const eventosPorMes = {};
+  datasEventos.forEach(data => {
+    const anoMes = `${data.getFullYear()}-${String(data.getMonth() + 1).padStart(2, '0')}`;
+    if (!eventosPorMes[anoMes]) eventosPorMes[anoMes] = [];
+    eventosPorMes[anoMes].push(data);
+  });
+
+  Object.keys(eventosPorMes).sort().forEach((anoMes) => {
     const [ano, mes] = anoMes.split('-');
     const nomeMes = new Date(ano, Number(mes) - 1).toLocaleString('pt-BR', { month: 'long' });
 
@@ -43,13 +216,14 @@ document.addEventListener('DOMContentLoaded', () => {
     tituloMes.textContent = `${nomeMes.charAt(0).toUpperCase() + nomeMes.slice(1)} ${ano}`;
     section.appendChild(tituloMes);
 
-    datasPorMes[anoMes].forEach((dataEvento, idx) => {
-      if (dataEvento >= hoje) {
-        const ev = tiposEventos[idx % tiposEventos.length];
+    eventosPorMes[anoMes].forEach((dataEvento) => {
+      const dataISO = dataEvento.toISOString().slice(0, 10);
+      const eventosDoDia = eventosEspecificos[dataISO];
 
+      eventosDoDia.forEach(ev => {
         const eventoDiv = document.createElement('div');
         eventoDiv.classList.add('evento');
-        eventoDiv.setAttribute('data-date', dataEvento.toISOString().slice(0, 10));
+        eventoDiv.setAttribute('data-date', dataISO);
         eventoDiv.innerHTML = `
           <div class="data">
             <span class="dia">${String(dataEvento.getDate()).padStart(2, '0')}</span>
@@ -62,13 +236,13 @@ document.addEventListener('DOMContentLoaded', () => {
           </div>
         `;
         section.appendChild(eventoDiv);
-      }
+      });
     });
 
     agendaDiv.appendChild(section);
   });
 
-  // Hover efeitos
+  // Hover efeito
   document.querySelectorAll('.evento').forEach(evento => {
     evento.addEventListener('mouseenter', () => {
       evento.style.transform = 'scale(1.02)';
@@ -81,9 +255,10 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+// Menu mobile (mantido como estava)
 const menuToggle = document.getElementById('menu-toggle');
 const menu = document.getElementById('menu');
 
 menuToggle.addEventListener('click', () => {
-    menu.classList.toggle('active');
+  menu.classList.toggle('active');
 });
