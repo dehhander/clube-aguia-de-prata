@@ -213,11 +213,16 @@ footer {
 
     .logo-container {
     display: flex;
-    flex-direction: column;
-    gap: 20px;
-    align-items: center;
+    flex-wrap: wrap;
     justify-content: center;
+    gap: 20px;
     padding: 20px;
+    }
+
+.logo-container img {
+    width: 45%; /* Faz com que caibam dois por linha com espaçamento */
+    }
+    
 }
-}
+
 
