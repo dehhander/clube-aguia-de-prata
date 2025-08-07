@@ -69,6 +69,30 @@ function showHistory(unit) {
             </div>
         `;
     }
+
+    else if (unit === 'aguia-real') {
+    title.textContent = 'Águia Real';
+
+    contentContainer.innerHTML = `
+        <div>
+            <h3>Sobre a Unidade</h3>
+            <p>A unidade Águia Real é formada por desbravadoras que buscam a excelência, a coragem e a fidelidade nos caminhos da liderança e do serviço cristão.</p>
+        </div>
+        <div>
+            <h3>Visão da Águia</h3>
+            <p>Representando majestade e força, a águia real simboliza a visão elevada e o propósito firme dos membros da unidade.</p>
+        </div>
+        <div>
+            <h3>História do Logo</h3>
+            <p>O logo da Águia Real reflete a imponência e a nobreza desta ave, destacando o compromisso da unidade com valores elevados e liderança inspiradora.</p>
+        </div>
+        <div>
+            <h3>Grito de Guerra</h3>
+            <p>“Com coragem e lealdade, voamos como a Águia Real!”</p>
+        </div>
+    `;
+}
+
 }
 
 const menuToggle = document.getElementById('menu-toggle');
