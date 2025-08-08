@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
   "2025-08-03": [
     { titulo: "Título do Evento", local: "Local", horario: "Horário" }
   ],
-  "2025-08-09": [
+  "2025-08-07": [
     { titulo: "Título do Evento", local: "Local", horario: "Horário" }
   ],
   "2025-08-10": [
@@ -262,3 +262,4 @@ const menu = document.getElementById('menu');
 menuToggle.addEventListener('click', () => {
   menu.classList.toggle('active');
 });
+
