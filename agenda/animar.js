@@ -189,9 +189,12 @@ document.addEventListener('DOMContentLoaded', () => {
   ]
 };
 
-  // Obter e ordenar as datas futuras
+  // Obter e ordenar as datas futuras (criando como LOCAL, não UTC)
   const datasEventos = Object.keys(eventosEspecificos)
-    .map(dataStr => new Date(dataStr))
+    .map(dataStr => {
+      const [ano, mes, dia] = dataStr.split('-').map(Number);
+      return new Date(ano, mes - 1, dia); // ← local
+    })
     .filter(data => data >= hoje)
     .sort((a, b) => a - b);
 
@@ -217,7 +220,8 @@ document.addEventListener('DOMContentLoaded', () => {
     section.appendChild(tituloMes);
 
     eventosPorMes[anoMes].forEach((dataEvento) => {
-      const dataISO = dataEvento.toISOString().slice(0, 10);
+      // Construir a chave manualmente para não ter problema de fuso
+      const dataISO = `${dataEvento.getFullYear()}-${String(dataEvento.getMonth() + 1).padStart(2, '0')}-${String(dataEvento.getDate()).padStart(2, '0')}`;
       const eventosDoDia = eventosEspecificos[dataISO];
 
       eventosDoDia.forEach(ev => {
@@ -255,7 +259,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-// Menu mobile (mantido como estava)
+// Menu mobile
 const menuToggle = document.getElementById('menu-toggle');
 const menu = document.getElementById('menu');
 
