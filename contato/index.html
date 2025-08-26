@@ -41,6 +41,55 @@
                 <a href="https://www.youtube.com/channel/UCgtxBK9ygrPW1dkWYeqOZ4Q" target="_blank"><i class="fa-brands fa-youtube"></i></a>
             </div>
 
+             <!-- QR Code Flutuante com Texto -->
+<div class="qr-float">
+  <p>Ajude o Clube</p>
+  <img src="https://www.designi.com.br/images/preview/10665323.jpg" alt="QR Code">
+</div>
+
+<style>
+.qr-float {
+  position: fixed;
+  bottom: 30%;
+  right: 1%;
+  background: #fff;
+  border-radius: 12px;
+  padding: 10px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  z-index: 9999;
+  font-family: Arial, sans-serif;
+
+  /* animação aplicada no bloco inteiro */
+  animation: floatBox 3s ease-in-out infinite;
+  transition: transform 0.3s ease;
+}
+
+.qr-float p {
+  margin: 0 0 8px 0;
+  font-size: 14px;
+  font-weight: bold;
+  color: #333;
+}
+
+.qr-float img {
+  width: 120px;
+  height: auto;
+}
+
+/* Animação do bloco inteiro */
+@keyframes floatBox {
+  0%   { transform: translateY(0px); }
+  50%  { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+/* Interatividade ao passar o mouse */
+.qr-float:hover {
+  transform: scale(1.05) rotate(2deg);
+}
+</style>
+
             <!-- Botão Menu Mobile -->
             <button class="menu-toggle" id="menu-toggle">
                 <i class="fas fa-bars"></i>
@@ -94,4 +143,5 @@
     
 </body>
 </html>
+
 
