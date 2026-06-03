@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 🔧 Aqui você edita os eventos: data: [ {titulo, local, horario}, ... ]
   const eventosEspecificos = {
-  "2025-06-01": [
+  "2026-06-01": [
     { titulo: "Título do Evento", local: "Local", horario: "Horário" }
   ],
   "2025-06-07": [
