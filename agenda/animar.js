@@ -7,184 +7,184 @@ document.addEventListener('DOMContentLoaded', () => {
   "2026-06-01": [
     { titulo: "Título do Evento", local: "Local", horario: "Horário" }
   ],
-  "2025-06-07": [
+  "2026-06-07": [
     { titulo: "Título do Evento", local: "Local", horario: "Horário" }
   ],
-  "2025-06-08": [
+  "2026-06-08": [
     { titulo: "Título do Evento", local: "Local", horario: "Horário" }
   ],
-  "2025-06-14": [
+  "2026-06-14": [
     { titulo: "Título do Evento", local: "Local", horario: "Horário" }
   ],
   "2025-06-15": [
     { titulo: "Título do Evento", local: "Local", horario: "Horário" }
   ],
-  "2025-06-21": [
+  "2026-06-21": [
     { titulo: "Título do Evento", local: "Local", horario: "Horário" }
   ],
-  "2025-06-22": [
+  "2026-06-22": [
     { titulo: "Título do Evento", local: "Local", horario: "Horário" }
   ],
-  "2025-06-28": [
+  "2026-06-28": [
     { titulo: "Título do Evento", local: "Local", horario: "Horário" }
   ],
-  "2025-06-29": [
+  "2026-06-29": [
     { titulo: "Título do Evento", local: "Local", horario: "Horário" }
   ],
-  "2025-07-05": [
+  "2026-07-05": [
     { titulo: "Título do Evento", local: "Local", horario: "Horário" }
   ],
-  "2025-07-06": [
+  "2026-07-06": [
     { titulo: "Título do Evento", local: "Local", horario: "Horário" }
   ],
-  "2025-07-12": [
+  "2026-07-12": [
     { titulo: "Título do Evento", local: "Local", horario: "Horário" }
   ],
-  "2025-07-13": [
+  "2026-07-13": [
     { titulo: "Título do Evento", local: "Local", horario: "Horário" }
   ],
-  "2025-07-19": [
+  "2026-07-19": [
     { titulo: "Título do Evento", local: "Local", horario: "Horário" }
   ],
-  "2025-07-20": [
+  "2026-07-20": [
     { titulo: "Título do Evento", local: "Local", horario: "Horário" }
   ],
-  "2025-07-26": [
+  "2026-07-26": [
     { titulo: "Título do Evento", local: "Local", horario: "Horário" }
   ],
-  "2025-07-27": [
+  "2026-07-27": [
     { titulo: "Título do Evento", local: "Local", horario: "Horário" }
   ],
-  "2025-08-02": [
+  "2026-08-02": [
     { titulo: "Título do Evento", local: "Local", horario: "Horário" }
   ],
-  "2025-08-03": [
+  "2026-08-03": [
     { titulo: "Título do Evento", local: "Local", horario: "Horário" }
   ],
-  "2025-08-09": [
+  "2026-08-09": [
     { titulo: "Título do Evento", local: "Local", horario: "Horário" }
   ],
-  "2025-08-10": [
+  "2026-08-10": [
     { titulo: "Título do Evento", local: "Local", horario: "Horário" }
   ],
-  "2025-08-16": [
+  "2026-08-16": [
     { titulo: "Título do Evento", local: "Local", horario: "Horário" }
   ],
-  "2025-08-17": [
+  "2026-08-17": [
     { titulo: "Título do Evento", local: "Local", horario: "Horário" }
   ],
-  "2025-08-23": [
+  "2026-08-23": [
     { titulo: "Título do Evento", local: "Local", horario: "Horário" }
   ],
-  "2025-08-24": [
+  "2026-08-24": [
     { titulo: "Título do Evento", local: "Local", horario: "Horário" }
   ],
-  "2025-08-30": [
+  "2026-08-30": [
     { titulo: "Título do Evento", local: "Local", horario: "Horário" }
   ],
-  "2025-08-31": [
+  "2026-08-31": [
     { titulo: "Título do Evento", local: "Local", horario: "Horário" }
   ],
-  "2025-09-06": [
+  "2026-09-06": [
     { titulo: "Título do Evento", local: "Local", horario: "Horário" }
   ],
-  "2025-09-07": [
+  "2026-09-07": [
     { titulo: "Título do Evento", local: "Local", horario: "Horário" }
   ],
-  "2025-09-13": [
+  "2026-09-13": [
     { titulo: "Título do Evento", local: "Local", horario: "Horário" }
   ],
-  "2025-09-14": [
+  "2026-09-14": [
     { titulo: "Título do Evento", local: "Local", horario: "Horário" }
   ],
-  "2025-09-20": [
+  "2026-09-20": [
     { titulo: "Título do Evento", local: "Local", horario: "Horário" }
   ],
-  "2025-09-21": [
+  "2026-09-21": [
     { titulo: "Título do Evento", local: "Local", horario: "Horário" }
   ],
-  "2025-09-27": [
+  "2026-09-27": [
     { titulo: "Título do Evento", local: "Local", horario: "Horário" }
   ],
-  "2025-09-28": [
+  "2026-09-28": [
     { titulo: "Título do Evento", local: "Local", horario: "Horário" }
   ],
-  "2025-10-04": [
+  "2026-10-04": [
     { titulo: "Título do Evento", local: "Local", horario: "Horário" }
   ],
-  "2025-10-05": [
+  "2026-10-05": [
     { titulo: "Título do Evento", local: "Local", horario: "Horário" }
   ],
-  "2025-10-11": [
+  "2026-10-11": [
     { titulo: "Título do Evento", local: "Local", horario: "Horário" }
   ],
-  "2025-10-12": [
+  "2026-10-12": [
     { titulo: "Título do Evento", local: "Local", horario: "Horário" }
   ],
-  "2025-10-18": [
+  "2026-10-18": [
     { titulo: "Título do Evento", local: "Local", horario: "Horário" }
   ],
-  "2025-10-19": [
+  "2026-10-19": [
     { titulo: "Título do Evento", local: "Local", horario: "Horário" }
   ],
-  "2025-10-25": [
+  "2026-10-25": [
     { titulo: "Título do Evento", local: "Local", horario: "Horário" }
   ],
-  "2025-10-26": [
+  "2026-10-26": [
     { titulo: "Título do Evento", local: "Local", horario: "Horário" }
   ],
-  "2025-11-01": [
+  "2026-11-01": [
     { titulo: "Título do Evento", local: "Local", horario: "Horário" }
   ],
-  "2025-11-02": [
+  "2026-11-02": [
     { titulo: "Título do Evento", local: "Local", horario: "Horário" }
   ],
-  "2025-11-08": [
+  "2026-11-08": [
     { titulo: "Título do Evento", local: "Local", horario: "Horário" }
   ],
-  "2025-11-09": [
+  "2026-11-09": [
     { titulo: "Título do Evento", local: "Local", horario: "Horário" }
   ],
-  "2025-11-15": [
+  "2026-11-15": [
     { titulo: "Título do Evento", local: "Local", horario: "Horário" }
   ],
-  "2025-11-16": [
+  "2026-11-16": [
     { titulo: "Título do Evento", local: "Local", horario: "Horário" }
   ],
-  "2025-11-22": [
+  "2026-11-22": [
     { titulo: "Título do Evento", local: "Local", horario: "Horário" }
   ],
-  "2025-11-23": [
+  "2026-11-23": [
     { titulo: "Título do Evento", local: "Local", horario: "Horário" }
   ],
-  "2025-11-29": [
+  "2026-11-29": [
     { titulo: "Título do Evento", local: "Local", horario: "Horário" }
   ],
-  "2025-11-30": [
+  "2026-11-30": [
     { titulo: "Título do Evento", local: "Local", horario: "Horário" }
   ],
-  "2025-12-06": [
+  "2026-12-06": [
     { titulo: "Título do Evento", local: "Local", horario: "Horário" }
   ],
-  "2025-12-07": [
+  "2026-12-07": [
     { titulo: "Título do Evento", local: "Local", horario: "Horário" }
   ],
-  "2025-12-13": [
+  "2026-12-13": [
     { titulo: "Título do Evento", local: "Local", horario: "Horário" }
   ],
-  "2025-12-14": [
+  "2026-12-14": [
     { titulo: "Título do Evento", local: "Local", horario: "Horário" }
   ],
-  "2025-12-20": [
+  "2026-12-20": [
     { titulo: "Título do Evento", local: "Local", horario: "Horário" }
   ],
-  "2025-12-21": [
+  "2026-12-21": [
     { titulo: "Título do Evento", local: "Local", horario: "Horário" }
   ],
-  "2025-12-27": [
+  "2026-12-27": [
     { titulo: "Título do Evento", local: "Local", horario: "Horário" }
   ],
-  "2025-12-28": [
+  "2026-12-28": [
     { titulo: "Título do Evento", local: "Local", horario: "Horário" }
   ]
 };
